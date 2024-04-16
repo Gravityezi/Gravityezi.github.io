@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>论坛</title>
+    <!--        <link rel='stylesheet prefetch' href='css/1-css.css'>
+        <link rel='stylesheet prefetch' href='css/1-font-awesome.css'>-->
+    <link rel="stylesheet" href="css/1-style.css">
+    <script src="js/1-index.js"></script>
+    <link href="static/css1/demo.css" rel="stylesheet">
+    <link href="static/css1/ionicons.min.css" rel="stylesheet">
+    <link href="static/css1/flutter.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style-1.css">
+    <style type="text/css">
+        body,td,th {
+        font-family: Karla, sans-serif;
+        color: #FFF;
+        }
+    </style>
+    <style>
+        canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+        <div class="top_left">
+			<div class="top_left_title">
+				<img src="images/IDN 图标 02.png" width="220px" height="80px">
+				<ul>
+                    <!--<li><a class='li_6'><strong>IDN</strong></a></li>-->
+					<li><a><strong>上海IDN信息科技有限公司</strong></a></li>
+                </ul>
+			</div>
+            <nav>
+                <menu>
+                    <menuitem id="demo1">
+                        <a href="index.html">IDN首页</a>
+                        <menu>
+                            <menuitem><a href="Luntan.html">论坛</a></menuitem>
+                            <menuitem>
+                                <a href="About.html">关于</a>
+                                <menu>
+                                    <menuitem><a href="About.html">联系方式</a></menuitem>
+                                    <menuitem><a href="About.html">赞助我们</a></menuitem>
+                                    <menuitem><a href="About.html">加入我们</a></menuitem>
+                                </menu>
+                            </menuitem>
+                            <menuitem id="demo2"><a href="denglu.html" target="_blank">登录</a></menuitem>
+                            <menuitem id="demo3">
+                                <a>小游戏</a>
+                                <menu>
+                                    <menuitem><a href="game/game-wjzz/维京战争.html">游戏-维京战争</a></menuitem>
+                                    <menuitem><a href="game/game-bwxq/保卫星球.html">游戏-保卫星球</a></menuitem>
+                                    <menuitem><a href="game/game-ywzq/勇往直前.html" target="_blank">游戏-勇往直前</a></menuitem>
+                                    <menuitem><a href="game/game-fjdz/飞机大战.html" target="_blank">游戏-飞机大战</a></menuitem>
+                                </menu>
+                            </menuitem>
+                        </menu>
+                    </menuitem>
+                </menu>
+            </nav>
+        </div>
+        <div class='beijing_1'>
+            <canvas id=c></canvas>
+            <script>
+                let w = c.width = window.innerWidth*1.15;
+                let h = c.height = window.innerHeight*1.9;
+                
+                const ctx = c.getContext('2d');
+                const opts = {
+                	hexLength: 30,
+                	lenFn: ({ len, t }) =>
+                	  len + Math.sin(t),
+                	radFn: ({ rad, len, t, excitement }) =>
+                	  rad + (excitement + opts.propFn({ len, t }))*2 / 4,
+                	propFn: ({ len, t }) => 
+                	  len / opts.hexLength / 10 - t,
+                	excitementFn: ({ len, t }) =>
+                	   Math.sin(opts.propFn({ len, t }))**2,
+                	colorFn: ({ rad, excitement, t }) => 
+                	  `hsl(${rad / Math.TAU * 360 + t}, ${excitement * 100}%, ${20 + excitement * 50}%)`,
+                	timeStep: .01,
+                	randomJig: 8,
+                
+                	repaintColor: 'rgba(34,34,34,0.1)'
+                  };
+                let tick = 0;
+                
+                Math.TAU = 6.28318530717958647692;
+                
+                const vertices = [];
+                class Vertex {
+                  constructor({ x, y }) {
+                	this.len = Math.sqrt(x*x + y*y);
+                	this.rad = Math.acos(x / this.len) * (y > 0 ? 1 : -1) + .13;
+                	this.prevPoint = { x, y };
+                  }
+                
+                  step() {
+                	const excitement = opts.excitementFn({ len: this.len, t: tick });
+                	const param = { 
+                	  len: this.len,
+                	  rad: this.rad,
+                	  t: tick,
+                	  excitement
+                	};
+                	const nextLen = opts.lenFn(param);
+                	const nextRad = opts.radFn(param);
+                	const color = opts.colorFn(param);
+                
+                	ctx.strokeStyle = color;
+                	ctx.lineWidth = excitement + .2;
+                	ctx.beginPath();
+                	ctx.moveTo(this.prevPoint.x, this.prevPoint.y);
+                	this.prevPoint.x = nextLen * Math.cos(nextRad) + 
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	this.prevPoint.y = nextLen * Math.sin(nextRad) +
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	ctx.lineTo(this.prevPoint.x, this.prevPoint.y);
+                	ctx.stroke();
+                  }
+                
+                  static gen() {
+                	vertices.length = 0; 
+                	const hexCos = Math.cos(Math.TAU / 12) * opts.hexLength;
+                	const hexSin = Math.sin(Math.TAU / 12) * opts.hexLength;
+                
+                
+                	let alternanceX = false;
+                	for(let x = 0; x < w; x += hexCos) {
+                	  let alternance = alternanceX = !alternanceX;
+                	  for(let y = 0; y < h; y += hexSin + opts.hexLength) {
+                		alternance = !alternance;
+                		vertices.push(new Vertex({
+                		  x: x - w / 2,
+                		  y: y + alternance * hexSin - h / 2
+                		}))
+                	  }
+                	}
+                
+                  }
+                }
+                
+                Vertex.gen();
+                
+                ctx.fillStyle = '#222';
+                ctx.fillRect(0, 0, w, h);
+                const anim = () => {
+                  window.requestAnimationFrame(anim);
+                
+                  tick += opts.timeStep;
+                
+                  ctx.fillStyle = opts.repaintColor;
+                  ctx.fillRect(0, 0, w, h);
+                
+                  ctx.translate(w/2, h/2);
+                  vertices.forEach((vertex) => vertex.step());
+                  ctx.translate(-w/2, -h/2);
+                }
+                anim();
+                
+                window.addEventListener('resize', () => {
+                  w = c.width = window.innerWidth;
+                  h = c.height = window.innerHeight;
+                
+                  Vertex.gen();
+                  tick = 0;
+                  ctx.fillStyle = '#222';
+                  ctx.fillRect(0, 0, w, h);
+                })
+            </script>
+        </div>
+        <div class='new_game'>
+            <div class='biaoti'>
+                <ul>
+                    <li><a class='li_1'><strong>最新消息</strong></a></li>
+                </ul>
+                <div class="picture_new_1">
+                    <div class="flutter-container">
+                        <div class="col-flut-2">
+                            <figure class="Flutters flutEffect_6">
+                                <img src="images/1.jpg" width="250px" height="300px" alt="sample7">
+                                <figcaption>
+                                    <h2><strong>IDN_01 论坛板块</strong></h2>
+                                    <p>简介：None</p>
+                                    <p>最新消息：None</p>
+                                    <p>热度：None</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture_new_2">
+                    <div class="flutter-container">
+                        <div class="col-flut-2">
+                            <figure class="Flutters flutEffect_6">
+                                <img src="images/2.jpg" width="250px" height="300px" alt="sample7">
+                                <figcaption>
+                                    <h2><strong>IDN_02 论坛板块</strong></h2>
+                                    <p>简介：None</p>
+                                    <p>最新消息：None</p>
+                                    <p>热度：None</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture_new_3">
+                    <div class="flutter-container">
+                        <div class="col-flut-2">
+                            <figure class="Flutters flutEffect_6">
+                                <img src="images/3.jpg" width="250px" height="300px" alt="sample7">
+                                <figcaption>
+                                    <h2><strong>IDN_03 论坛板块</strong></h2>
+                                    <p>简介：None</p>
+                                    <p>最新消息：None</p>
+                                    <p>热度：None</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture_new_4">
+                    <div class="flutter-container">
+                        <div class="col-flut-2">
+                            <figure class="Flutters flutEffect_6">
+                                <img src="images/4.jpg" width="250px" height="300px" alt="sample7">
+                                <figcaption>
+                                    <h2><strong>IDN_04 论坛板块</strong></h2>
+                                    <p>简介：None</p>
+                                    <p>最新消息：None</p>
+                                    <p>热度：None</p>
+                                    <a href="xiangqing.html"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="word_new_1" align="center">
+                    <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'><strong>IDN_01 论坛板块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;<strong>楼主：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问一下伊织所有技能是不是就是技能树的，我伊织技能树全点了但还是没有解锁这个成就，是卡bug了吗<br/>&nbsp;&nbsp;<strong>玩家A：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一周目能完成的是狗哥异传，无主saber异传和参孙异传，阿周那异传在二周目才有，无主saber异传要求第三章选等<br/>&nbsp;&nbsp;&nbsp;&nbsp;等力第四章选消灭土御门<br/><br/><hr/><br/><h4>IDN_01 论坛板块:点击图标查看论坛</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="word_new_2" align="center">
+                    <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'><strong>IDN_02 论坛板块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;<strong>楼主：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;抓企鹅掉了这个力量解放，有懂的老铁知道这东西有用吗<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天开始刷珠子，真萌新。<br/>&nbsp;&nbsp;<strong>玩家B：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;力解触发条件是战斗五分钟或者损失180血，说实话除了黑龙王冰感觉覆盖率不太行。如果你想要刷好点的珠子的话<br/>&nbsp;&nbsp;&nbsp;&nbsp;推荐还是灭日，抓企鹅给的很多都是等级比较低的<br/><br/><hr/><br/><h4>IDN_02 论坛板块:点击图标查看论坛</h4>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="word_new_3" align="center">
+                    <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'><strong>IDN_03 论坛板块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;<strong>楼主：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这五头猪什么情况？冥灯龙全套被一下秒，这么离谱的吗？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早就听说这几头猪很牛逼，但没想到这么牛逼，本体通关闲着没事打算试试，我看也就6星任务，我一身冥灯龙套装<br/>&nbsp;&nbsp;&nbsp;&nbsp;应该能打吧，没想到上去砍两刀被猪一下撞死，这玩意不会得等冰原通关才能打吧。<br/>&nbsp;&nbsp;<strong>玩家C：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这猪猪其实考验的是打猎基本功哦，石头可以打晕它们，一些眩晕类攻击也可以，比起装备更重要的是思路。<br/><br/><hr/><br/><h4>IDN_01 论坛板块:点击图标查看论坛</h4>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="word_new_4" align="center">
+                    <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'><strong>IDN_04 论坛板块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;<strong>楼主：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这两个功能确定不是搞反了？<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;耐热的在寒冷地区有用，耐寒的在热的地区有用<br/>&nbsp;&nbsp;<strong>玩家D：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重要的不是名字，是你手指恰好挡住的耐热和耐寒等级。<br/><br/><hr/><br/><h4>IDN_04 论坛板块:点击图标查看论坛</h4>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='bottom'>
+            <div class='bottom_left'>
+                <p>IDN致力于普及最低的游戏价格，从各平台选取最优价格。<br>
+                    © 2024年 就业指导第二十一组 保留所有权利。<br>
+                    -沪ICP备111111111号
+                </p>
+            </div>
+            <div class='bottom_right'>
+                <div class="links">
+                    <dl>
+                        <dt>关于IDN</dt>
+                        <dd><a href="#">关于</a></dd>
+                        <dd><a href="#">管理团队</a></dd>
+                        <dd><a href="#">工作机会</a></dd>
+                        <dd><a href="#">客户服务</a></dd>
+                        <dd><a href="#">帮助</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd><a href="#">如何注册</a></dd>
+                        <dd><a href="#">如何购买游戏</a></dd>
+                        <dd><a href="#">如何拿到内购码</a></dd>
+                        <dd><a href="#">积分是什么</a></dd>
+                        <dd><a href="#">游戏购买未成功怎么办</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>合作伙伴</dt>
+                        <dd><a href="#">合作机构</a></dd>
+                        <dd><a href="#">合作个人</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <p>Copyright © 2021.Company name IDN reserved.就业指导第二十一组 就业指导创业计划书</p>
+            </ul>
+        </div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>详情</title>
+    <!--        <link rel='stylesheet prefetch' href='css/1-css.css'>
+        <link rel='stylesheet prefetch' href='css/1-font-awesome.css'>-->
+    <link rel="stylesheet" href="css/1-style.css">
+    <script src="js/1-index.js"></script>
+    <link href="static/css1/demo.css" rel="stylesheet">
+    <link href="static/css1/ionicons.min.css" rel="stylesheet">
+    <link href="static/css1/flutter.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style-1.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style type="text/css">
+        body,td,th {
+        font-family: Karla, sans-serif;
+        color: #FFF;
+        }
+    </style>
+    <style>
+        canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+        <div class="top_left">
+			<div class="top_left_title">
+				<img src="images/IDN 图标 02.png" width="220px" height="80px">
+				<ul>
+                    <!--<li><a class='li_6'><strong>IDN</strong></a></li>-->
+					<li><a><strong>上海IDN信息科技有限公司</strong></a></li>
+                </ul>
+			</div>
+            <nav>
+                <menu>
+                    <menuitem id="demo1">
+                        <a href="index.html">IDN首页</a>
+                        <menu>
+                            <menuitem><a href="Luntan.html">论坛</a></menuitem>
+                            <menuitem>
+                                <a href="About.html">关于</a>
+                                <menu>
+                                    <menuitem><a href="About.html">联系方式</a></menuitem>
+                                    <menuitem><a href="About.html">赞助我们</a></menuitem>
+                                    <menuitem><a href="About.html">加入我们</a></menuitem>
+                                </menu>
+                            </menuitem>
+                            <menuitem id="demo2"><a href="denglu.html" target="_blank">登录</a></menuitem>
+                            <menuitem id="demo3">
+                                <a>小游戏</a>
+                                <menu>
+                                    <menuitem><a href="game/game-wjzz/维京战争.html">游戏-维京战争</a></menuitem>
+                                    <menuitem><a href="game/game-bwxq/保卫星球.html">游戏-保卫星球</a></menuitem>
+                                    <menuitem><a href="game/game-ywzq/勇往直前.html" target="_blank">游戏-勇往直前</a></menuitem>
+                                    <menuitem><a href="game/game-fjdz/飞机大战.html" target="_blank">游戏-飞机大战</a></menuitem>
+                                </menu>
+                            </menuitem>
+                        </menu>
+                    </menuitem>
+                </menu>
+            </nav>
+        </div>
+        <div class='beijing_1'>
+            <canvas id=c></canvas>
+            <script>
+                let w = c.width = window.innerWidth*1.15;
+                let h = c.height = window.innerHeight*1.9;
+                
+                const ctx = c.getContext('2d');
+                const opts = {
+                	hexLength: 30,
+                	lenFn: ({ len, t }) =>
+                	  len + Math.sin(t),
+                	radFn: ({ rad, len, t, excitement }) =>
+                	  rad + (excitement + opts.propFn({ len, t }))*2 / 4,
+                	propFn: ({ len, t }) => 
+                	  len / opts.hexLength / 10 - t,
+                	excitementFn: ({ len, t }) =>
+                	   Math.sin(opts.propFn({ len, t }))**2,
+                	colorFn: ({ rad, excitement, t }) => 
+                	  `hsl(${rad / Math.TAU * 360 + t}, ${excitement * 100}%, ${20 + excitement * 50}%)`,
+                	timeStep: .01,
+                	randomJig: 8,
+                
+                	repaintColor: 'rgba(34,34,34,0.1)'
+                  };
+                let tick = 0;
+                
+                Math.TAU = 6.28318530717958647692;
+                
+                const vertices = [];
+                class Vertex {
+                  constructor({ x, y }) {
+                	this.len = Math.sqrt(x*x + y*y);
+                	this.rad = Math.acos(x / this.len) * (y > 0 ? 1 : -1) + .13;
+                	this.prevPoint = { x, y };
+                  }
+                
+                  step() {
+                	const excitement = opts.excitementFn({ len: this.len, t: tick });
+                	const param = { 
+                	  len: this.len,
+                	  rad: this.rad,
+                	  t: tick,
+                	  excitement
+                	};
+                	const nextLen = opts.lenFn(param);
+                	const nextRad = opts.radFn(param);
+                	const color = opts.colorFn(param);
+                
+                	ctx.strokeStyle = color;
+                	ctx.lineWidth = excitement + .2;
+                	ctx.beginPath();
+                	ctx.moveTo(this.prevPoint.x, this.prevPoint.y);
+                	this.prevPoint.x = nextLen * Math.cos(nextRad) + 
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	this.prevPoint.y = nextLen * Math.sin(nextRad) +
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	ctx.lineTo(this.prevPoint.x, this.prevPoint.y);
+                	ctx.stroke();
+                  }
+                
+                  static gen() {
+                	vertices.length = 0; 
+                	const hexCos = Math.cos(Math.TAU / 12) * opts.hexLength;
+                	const hexSin = Math.sin(Math.TAU / 12) * opts.hexLength;
+                
+                
+                	let alternanceX = false;
+                	for(let x = 0; x < w; x += hexCos) {
+                	  let alternance = alternanceX = !alternanceX;
+                	  for(let y = 0; y < h; y += hexSin + opts.hexLength) {
+                		alternance = !alternance;
+                		vertices.push(new Vertex({
+                		  x: x - w / 2,
+                		  y: y + alternance * hexSin - h / 2
+                		}))
+                	  }
+                	}
+                
+                  }
+                }
+                
+                Vertex.gen();
+                
+                ctx.fillStyle = '#222';
+                ctx.fillRect(0, 0, w, h);
+                const anim = () => {
+                  window.requestAnimationFrame(anim);
+                
+                  tick += opts.timeStep;
+                
+                  ctx.fillStyle = opts.repaintColor;
+                  ctx.fillRect(0, 0, w, h);
+                
+                  ctx.translate(w/2, h/2);
+                  vertices.forEach((vertex) => vertex.step());
+                  ctx.translate(-w/2, -h/2);
+                }
+                anim();
+                
+                window.addEventListener('resize', () => {
+                  w = c.width = window.innerWidth;
+                  h = c.height = window.innerHeight;
+                
+                  Vertex.gen();
+                  tick = 0;
+                  ctx.fillStyle = '#222';
+                  ctx.fillRect(0, 0, w, h);
+                })
+            </script>
+        </div>
+        <div class='xiangqing_game'>
+            <div class='jieshao_game'>
+                <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'>&nbsp;&nbsp;<strong>IDN_01 论坛版块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;"><strong>简介：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;骇翻全世界！!!<br/>&nbsp;&nbsp;&nbsp;&nbsp;和马克士一起保护（骇翻）旧金山！近未来的旧金山，到处都有ctOS，然鹅ctOS并不是像宣传的那样单纯只是为市民服务，它被不法公司，团体和个人用来监视市民，收集并出售他们的隐私数据、操纵选举并扰乱社会秩序。来加入Dedsec，一起弄翻这些不法分子（虽然你不是警察）<br/><br/>
+                            </p>
+                        </li>
+                    </ul>
+            </div>
+			
+			<div class='pinglun_1'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>Majestic</strong></a></li><li class="li_4"><a>steam</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;游戏很有趣，但是有很多bug和崩溃，而且游戏的优化也不好，帧数不稳定，画面也不够清晰。游戏的招募系统很有创意，但是也有一些缺点，比如角色的性格和配音都很单调，而且角色的死亡也没有什么影响，感觉没有什么代入感。游戏的剧情也不是很吸引人，感觉有些敷衍和乱编，没有前两部那么有深度和张力。总的来说，这是一款有潜力但是没有发挥好的游戏，如果你是看门狗的粉丝，或者你喜欢开放世界的游戏，你可以在打折的时候买来玩玩，但是不要期待太高。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_2'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>Sgt. Pepper</strong></a></li><li class="li_4"><a>steam</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;游戏很棒，我很喜欢游戏的设定和氛围，伦敦的再现非常精彩，游戏的画面和音效也很出色，游戏的玩法和创意也很多，可以用各种黑客技巧和武器来完成任务，可以招募和扮演任何角色，每个角色都有自己的特点和技能，可以根据不同的情况来选择合适的角色，游戏的世界也很有活力和细节，可以探索很多有趣的地方和事件，游戏的剧情和角色也很有意思，有一些惊喜和反转，游戏的难度也适中，不会太简单也不会太难，游戏的长度也合适，不会太长也不会太短。总的来说，这是一款非常值得玩的游戏，如果你喜欢看门狗系列，或者你喜欢动作冒险的游戏，你一定不要错过这款游戏。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_3'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>Ryuu</strong></a></li><li class="li_4"><a>steam</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;游戏很一般，我对游戏的期待太高了，结果感觉很失望，游戏的优化和稳定性很差，经常出现bug和崩溃，而且游戏的画面和表现也没有达到预期，感觉很模糊和粗糙，游戏的玩法和创意也没有什么新意，感觉就是在重复做同样的事情，游戏的招募系统也没有什么意义，感觉每个角色都差不多，而且角色的死亡也没有什么后果，感觉没有什么挑战和乐趣，游戏的剧情和角色也很无聊，感觉没有什么逻辑和情感，没有前两部那么有魅力和吸引力。总的来说，这是一款很平庸的游戏，如果你不是看门狗的铁粉，或者你不是很喜欢开放世界的游戏，你可以跳过这款游戏，或者等到打折的时候再买来玩玩。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_4'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>篝火营地</strong></a></li><li class="li_4"><a>知乎</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><p align="left" style="margin-left: 15px; margin-right: 15px; margin-top: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;育碧旗下的《看门狗：军团》已经于 2021 年 7 月 6 日正式推出了最新 DLC「血脉」。 在本 DLC 中，初代《看门狗》的主人公「艾登・皮尔斯」和《看门狗 2》的人气角色「扳手」将会作为可操作角色登场。 玩家可以在操作这两名角色的同时体验围绕他们所展开的崭新故事。 虽然本评测基本不包含关于 DLC 故事方面的剧透，但会提到发售前官方已公布的情报，以及故事开头的一些内容，请「希望在完全未知的状态下游玩 DLC」的玩家酌情阅读。 必定能让系列粉丝血脉偾张的剧情 本次 DLC「血脉」的重点无疑是曾在系列过去作品中登场过的艾登与扳手两人。 如果你是该系列的粉丝，看到这两人登场说不兴奋是不可能的。 而且「血脉」不只是将 2 人添加为了可操作角色，还让玩家可在故事模式下体验以他们为中心展开的新剧情。</p></li></ul>
+				</div>
+			</div>
+			
+        </div>
+        
+        <div class='bottom'>
+            <div class='bottom_left'>
+                <p>IDN致力于普及最低的游戏价格，从各平台选取最优价格。<br>
+                    © 2024年 就业指导第二十一组 保留所有权利。<br>
+                    -沪ICP备111111111号
+                </p>
+            </div>
+            <div class='bottom_right'>
+                <div class="links">
+                    <dl>
+                        <dt>关于IDN</dt>
+                        <dd><a href="#">关于</a></dd>
+                        <dd><a href="#">管理团队</a></dd>
+                        <dd><a href="#">工作机会</a></dd>
+                        <dd><a href="#">客户服务</a></dd>
+                        <dd><a href="#">帮助</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd><a href="#">如何注册</a></dd>
+                        <dd><a href="#">如何购买游戏</a></dd>
+                        <dd><a href="#">如何拿到内购码</a></dd>
+                        <dd><a href="#">积分是什么</a></dd>
+                        <dd><a href="#">游戏购买未成功怎么办</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>合作伙伴</dt>
+                        <dd><a href="#">合作机构</a></dd>
+                        <dd><a href="#">合作个人</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <p>Copyright © 2021.Company name IDN reserved.就业指导第二十一组 就业指导创业计划书</p>
+            </ul>
+        </div>
+
+		<div class='p-parent'>
+        <div class='parent'>
+            <div class='slider'>
+                <button type="button" id='right' class='right' name="button">
+                    <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                        <g>
+                            <path style='fill: #9d9d9d;' d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                                c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+                                "></path>
+                        </g>
+                    </svg>
+                </button>
+                <button type="button" id='left' class='left' name="button">
+                    <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                        <g>
+                            <path style='fill: #9d9d9d;' d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                                c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
+                        </g>
+                    </svg>
+                </button>
+                <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"></circle>
+                    <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"></circle>
+                    <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180"></circle>
+                    <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260"></circle>
+                    <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340"></circle>
+                    <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420"></circle>
+                    <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500"></circle>
+                    <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580"></circle>
+                    <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660"></circle>
+                </svg>
+                <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20"></circle>
+                    <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100"></circle>
+                    <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180"></circle>
+                    <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260"></circle>
+                    <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340"></circle>
+                    <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420"></circle>
+                    <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500"></circle>
+                    <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"></circle>
+                    <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"></circle>
+                </svg>
+                <div id='slide1' class='slide5 up1'></div>
+                <div id='slide2' class='slide6'></div>
+                <div id='slide3' class='slide7'></div>
+                <div id='slide4' class='slide8'></div>
+            </div>
+        </div>
+		</div>
+			
+</body>
+<!-- partial -->
+<script src="static/js/script.js"></script>
+</body></html>
