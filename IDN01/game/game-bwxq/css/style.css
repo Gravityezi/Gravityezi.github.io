@@ -101,7 +101,7 @@ nav {
 }
 
 nav a {
-	background: #75F;
+	background: #292222;
 	color: #FFF;
 	min-width: 190px;
 	-webkit-transition: background 0.5s, color 0.5s, -webkit-transform 0.5s;
@@ -191,7 +191,7 @@ menuitem>menu>menuitem.hover>menu>menuitem {
 	float: left;
 	width: 280px;
 	height: 2000px;
-	background:#434343; 
+	background:rgb(75,60,60,0.9); 
 	margin:0 auto;
 }
 
