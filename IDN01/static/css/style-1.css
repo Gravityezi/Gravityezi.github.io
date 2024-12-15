@@ -1,0 +1,641 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.beijing_1{
+	position: absolute;
+	top:0;
+/*	width: 1640px;
+	height: 870px;*/
+/*	left: 280px;
+	right:0;*/
+	background:#505050; 
+	margin:auto;
+}
+
+.image-container {
+    position: absolute;
+	top:50px;
+	width: 700px;
+	height: 384px;
+	left:300px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+	
+}
+
+.image-container img {
+	position: absolute;
+	left:20px;
+	top:17px;
+    width: 660px; /* 或者指定一个具体的宽度，例如500px */
+    height: 350px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+
+.tuijian_game{
+	position: absolute;
+	top:500px;
+	width: 1300px;
+	height: 460px;
+	left:280px;
+	right:0;
+	background:rgba(255, 255, 255, 0.04); /*半透明*/
+	margin:0 auto;
+	border-radius: 30px;
+	backdrop-filter: blur(6px);/*磨砂质感*/
+}
+.penyou_game{
+	position: absolute;
+	top:1050px;
+	width: 1300px;
+	height: 460px;
+	left:280px;
+	right:0;
+	background:rgba(255, 255, 255, 0.04); 
+	margin:0 auto;
+	border-radius: 30px;
+	backdrop-filter: blur(6px);
+}
+
+.xiangqing_game{
+	position: absolute;
+	top:100px;
+	width: 1300px;
+	height: 1460px;
+	left:280px;
+	right:0;
+	background:rgba(255, 255, 255, 0.04); /*半透明*/
+	margin:0 auto;
+	border-radius: 30px;
+	backdrop-filter: blur(6px);/*磨砂质感*/
+}
+
+.biaoti{
+	position: absolute;
+	top:20px;
+	width: 600px;
+	height: 100px;
+	left:-600px;
+	right:0;
+	margin:0 auto;
+}
+li{
+	list-style: none;
+}
+.li_1{
+	font-size:36px;
+}
+.li_2{
+	font-size:24px;
+}
+.li_3{
+	position: absolute;
+	top:2px;
+	left:15px;
+	font-size:22px;
+}
+.li_4{
+	position: absolute;
+	top:26px;
+	left:15px;
+	font-size:16px;
+}
+.li_5{
+	position: absolute;
+	top:20px;
+	left:120px;
+	font-size:36px;
+}
+.li_6{
+	position: absolute;
+	top:-24px;
+	font-size:110px;
+}
+.bottom_left p{
+	font-size:16px;
+	position: absolute;
+	top:50px;
+	left:100px;
+	text-align: center;
+}
+.picture_1{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_2{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:275px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_3{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:630px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_4{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:945px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+
+.word_1{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+}
+.word_2{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:275px;
+	right:0;
+	margin:0 auto;
+}
+.word_3{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:630px;
+	right:0;
+	margin:0 auto;
+}
+.word_4{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:945px;
+	right:0;
+	margin:0 auto;
+}
+
+.picture_5{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_6{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:275px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_7{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:630px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_8{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:945px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+.word_5{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+}
+.word_6{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:275px;
+	right:0;
+	margin:0 auto;
+}
+.word_7{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:630px;
+	right:0;
+	margin:0 auto;
+}
+.word_8{
+	position: absolute;
+	top:380px;
+	width: 250px;
+	height: 40px;
+	left:945px;
+	right:0;
+	margin:0 auto;
+}
+
+.bottom{
+	position: absolute;
+	top:1600px;
+	width: 100%;
+	height: 250px;
+	left:280px;
+	right:0;
+	background:rgba(76, 60, 60, 0.9); 
+	margin:0 auto;
+}
+.bottom_left{
+	position: absolute;
+	top:20px;
+	width: 700px;
+	height: 230px;
+	left:-1050px;
+	right:0;
+/*	background:#262626; */
+	margin:0 auto;
+}
+.bottom_right{
+	position: absolute;
+	top:20px;
+	width: 700px;
+	height: 230px;
+	left:500px;
+	right:0;
+/*	background:#262626; */
+	margin:0 auto;
+}
+
+.links {
+	/*float: right;*/
+	position: absolute;
+	top:50px;
+	
+}
+
+/* dl 列表设置在 链接 盒子中左浮动 */
+.links dl {
+	float: left;
+	/* 距离左侧 100 像素 */
+	margin-left: 100px;
+
+}
+
+/* 列表项 标题 样式 */
+.links dt {
+	height: 35px;
+	font-size: 18px;
+	color: #FFF;
+
+}
+
+/* 列表项 链接样式 */
+.links dd a {
+	font-size: 12px;
+	color: #FFF;
+}
+
+/* 鼠标经过的样式 */
+.links dd a:hover {
+	color: #004aff;
+}
+
+.foot {
+	position: absolute;
+	top:1850px;
+	width: 100%;
+	height: 20px;
+	background: #000;
+	color: #FFF;
+}
+
+.foot p {
+	text-align: center;
+}
+
+.new_game{
+	position: absolute;
+	top:50px;
+	width: 1300px;
+	height: 1500px;
+	left:280px;
+	right:0;
+	background:rgba(255, 255, 255, 0.04); 
+	margin:0 auto;
+	border-radius: 30px;
+	backdrop-filter: blur(6px);
+}
+
+.picture_new_1{
+	position: absolute;
+	top:70px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_new_2{
+	position: absolute;
+	top:420px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_new_3{
+	position: absolute;
+	top:770px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.picture_new_4{
+	position: absolute;
+	top:1120px;
+	width: 250px;
+	height: 300px;
+	left:-350px;
+	right:0;
+	margin:0 auto;
+	background:#606060;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+
+.word_new_1{
+	position: absolute;
+	top:70px;
+	width: 900px;
+	height: 300px;
+	left:300px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.word_new_2{
+	position: absolute;
+	top:420px;
+	width: 900px;
+	height: 300px;
+	left:300px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.word_new_3{
+	position: absolute;
+	top:770px;
+	width: 900px;
+	height: 300px;
+	left:300px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.word_new_4{
+	position: absolute;
+	top:1120px;
+	width: 900px;
+	height: 300px;
+	left:300px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.jieshao_game{
+	position: absolute;
+	top:50px;
+	width: 480px;
+	height: 384px;
+	left:720px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.pinglun_1{
+	position: absolute;
+	top:450px;
+	width: 1200px;
+	height: 230px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.pinglun_2{
+	position: absolute;
+	top:700px;
+	width: 1200px;
+	height: 230px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.pinglun_3{
+	position: absolute;
+	top:950px;
+	width: 1200px;
+	height: 230px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.pinglun_4{
+	position: absolute;
+	top:1200px;
+	width: 1200px;
+	height: 230px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.04);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.name_p{
+	position: absolute;
+	top:20px;
+	left:20px;
+	width: 50px;
+	height: 50px;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.2);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+.name{
+	position: absolute;
+	top:20px;
+	left:80px;
+	width: 550px;
+	height: 50px;
+	margin:0 auto;
+/*	background:rgba(255, 255, 255, 0.2);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;*/
+}
+.neirong{
+	position: absolute;
+	top:80px;
+	left:20px;
+	width: 1160px;
+	height: 130px;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.08);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 10px;
+}
+
+.Thing_1{
+	position: absolute;
+	top:480px;
+	width: 1250px;
+	height: 260px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.1);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 30px;
+}
+.Thing_2{
+	position: absolute;
+	top:760px;
+	width: 1250px;
+	height: 350px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.1);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 30px;
+}
+.Thing_3{
+	position: absolute;
+	top:1130px;
+	width: 1250px;
+	height: 350px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.1);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 30px;
+}
+.erweima_1{
+	position: absolute;
+	top:50px;
+	width: 250px;
+	height: 250px;
+	left:-400px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.1);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 30px;
+}
+.erweima_2{
+	position: absolute;
+	top:50px;
+	width: 250px;
+	height: 250px;
+	left:400px;
+	right:0;
+	margin:0 auto;
+	background:rgba(255, 255, 255, 0.1);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+	border-radius: 30px;
+}

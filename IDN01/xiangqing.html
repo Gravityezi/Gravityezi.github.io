@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>详情</title>
+    <!--        <link rel='stylesheet prefetch' href='css/1-css.css'>
+        <link rel='stylesheet prefetch' href='css/1-font-awesome.css'>-->
+    <link rel="stylesheet" href="css/1-style.css">
+    <script src="js/1-index.js"></script>
+    <link href="static/css1/demo.css" rel="stylesheet">
+    <link href="static/css1/ionicons.min.css" rel="stylesheet">
+    <link href="static/css1/flutter.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style-1.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style type="text/css">
+        body,td,th {
+        font-family: Karla, sans-serif;
+        color: #FFF;
+        }
+    </style>
+    <style>
+        canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+		<div class="blur-background"></div>
+        <div class="top_left">
+			<div class="top_left_title">
+				<img src="images/IDN 图标 02.png" width="220px" height="80px">
+				<ul>
+                    <!--<li><a class='li_6'><strong>IDN</strong></a></li>-->
+					<li><a><strong>上海IDN传媒文化有限公司</strong></a></li>
+                </ul>
+			</div>
+            <nav>
+                <menu>
+                    <menuitem id="demo1">
+                        <a href="index.html">IDN首页</a>
+                        <menu>
+                            <menuitem><a href="Luntan.html">论坛</a></menuitem>
+                            <menuitem>
+                                <a href="About.html">关于</a>
+                                <menu>
+                                    <menuitem><a href="About.html">联系方式</a></menuitem>
+                                    <menuitem><a href="About.html">赞助我们</a></menuitem>
+                                    <menuitem><a href="About.html">加入我们</a></menuitem>
+                                </menu>
+                            </menuitem>
+                            <menuitem id="demo2"><a href="denglu.html" target="_blank">登录</a></menuitem>
+                            <menuitem id="demo3">
+                                <a>小游戏</a>
+                                <menu>
+                                    <menuitem><a href="game/game-wjzz/维京战争.html">游戏-维京战争</a></menuitem>
+                                    <menuitem><a href="game/game-bwxq/保卫星球.html">游戏-保卫星球</a></menuitem>
+                                    <menuitem><a href="game/game-ywzq/勇往直前.html" target="_blank">游戏-勇往直前</a></menuitem>
+                                    <menuitem><a href="game/game-fjdz/飞机大战.html" target="_blank">游戏-飞机大战</a></menuitem>
+                                </menu>
+                            </menuitem>
+                        </menu>
+                    </menuitem>
+                </menu>
+            </nav>
+        </div>
+<!--        <div class='beijing_1'>
+            <canvas id=c></canvas>
+            <script>
+                let w = c.width = window.innerWidth*1.15;
+                let h = c.height = window.innerHeight*1.9;
+                
+                const ctx = c.getContext('2d');
+                const opts = {
+                	hexLength: 30,
+                	lenFn: ({ len, t }) =>
+                	  len + Math.sin(t),
+                	radFn: ({ rad, len, t, excitement }) =>
+                	  rad + (excitement + opts.propFn({ len, t }))*2 / 4,
+                	propFn: ({ len, t }) => 
+                	  len / opts.hexLength / 10 - t,
+                	excitementFn: ({ len, t }) =>
+                	   Math.sin(opts.propFn({ len, t }))**2,
+                	colorFn: ({ rad, excitement, t }) => 
+                	  `hsl(${rad / Math.TAU * 360 + t}, ${excitement * 100}%, ${20 + excitement * 50}%)`,
+                	timeStep: .01,
+                	randomJig: 8,
+                
+                	repaintColor: 'rgba(34,34,34,0.1)'
+                  };
+                let tick = 0;
+                
+                Math.TAU = 6.28318530717958647692;
+                
+                const vertices = [];
+                class Vertex {
+                  constructor({ x, y }) {
+                	this.len = Math.sqrt(x*x + y*y);
+                	this.rad = Math.acos(x / this.len) * (y > 0 ? 1 : -1) + .13;
+                	this.prevPoint = { x, y };
+                  }
+                
+                  step() {
+                	const excitement = opts.excitementFn({ len: this.len, t: tick });
+                	const param = { 
+                	  len: this.len,
+                	  rad: this.rad,
+                	  t: tick,
+                	  excitement
+                	};
+                	const nextLen = opts.lenFn(param);
+                	const nextRad = opts.radFn(param);
+                	const color = opts.colorFn(param);
+                
+                	ctx.strokeStyle = color;
+                	ctx.lineWidth = excitement + .2;
+                	ctx.beginPath();
+                	ctx.moveTo(this.prevPoint.x, this.prevPoint.y);
+                	this.prevPoint.x = nextLen * Math.cos(nextRad) + 
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	this.prevPoint.y = nextLen * Math.sin(nextRad) +
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	ctx.lineTo(this.prevPoint.x, this.prevPoint.y);
+                	ctx.stroke();
+                  }
+                
+                  static gen() {
+                	vertices.length = 0; 
+                	const hexCos = Math.cos(Math.TAU / 12) * opts.hexLength;
+                	const hexSin = Math.sin(Math.TAU / 12) * opts.hexLength;
+                
+                
+                	let alternanceX = false;
+                	for(let x = 0; x < w; x += hexCos) {
+                	  let alternance = alternanceX = !alternanceX;
+                	  for(let y = 0; y < h; y += hexSin + opts.hexLength) {
+                		alternance = !alternance;
+                		vertices.push(new Vertex({
+                		  x: x - w / 2,
+                		  y: y + alternance * hexSin - h / 2
+                		}))
+                	  }
+                	}
+                
+                  }
+                }
+                
+                Vertex.gen();
+                
+                ctx.fillStyle = '#222';
+                ctx.fillRect(0, 0, w, h);
+                const anim = () => {
+                  window.requestAnimationFrame(anim);
+                
+                  tick += opts.timeStep;
+                
+                  ctx.fillStyle = opts.repaintColor;
+                  ctx.fillRect(0, 0, w, h);
+                
+                  ctx.translate(w/2, h/2);
+                  vertices.forEach((vertex) => vertex.step());
+                  ctx.translate(-w/2, -h/2);
+                }
+                anim();
+                
+                window.addEventListener('resize', () => {
+                  w = c.width = window.innerWidth;
+                  h = c.height = window.innerHeight;
+                
+                  Vertex.gen();
+                  tick = 0;
+                  ctx.fillStyle = '#222';
+                  ctx.fillRect(0, 0, w, h);
+                })
+            </script>
+        </div>-->
+        <div class='xiangqing_game'>
+            <div class='jieshao_game'>
+                <ul>
+                        <li>
+                            <br/>
+                            <a class='li_2'>&nbsp;&nbsp;<strong>IDN_01 论坛版块</strong></a>
+                            <hr/>
+                            <br/>
+                            <p align="left" style="margin-left: 15px; margin-right: 15px;"><strong>简介：</strong><br/>&nbsp;&nbsp;&nbsp;&nbsp;在古老的传说中，九色缘是一种神秘的力量，能连接两个注定相遇的灵魂。<br/>&nbsp;&nbsp;&nbsp;&nbsp;年轻牧羊人云飞在山洞中发现了传说中的九色石，它引导他踏上了寻找仙缘之灵的冒险之旅。经历无数挑战后，云飞在一片神秘花海中与拥有九色眼眸的神鹿相遇，九色石的光芒见证了他们跨越轮回的不朽缘分，从此人与鹿共同守护这片土地，成为永恒的传说。<br/><br/>
+                            </p>
+                        </li>
+                    </ul>
+            </div>
+			
+			<div class='pinglun_1'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>一楼</strong></a></li><li class="li_4"><a>九色缘板块</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;在遥远的古代，有一个被群山环抱的神秘国度，那里流传着一个古老的传说。传说中，有一种名为“九色缘”的神秘力量，能够连接两个命中注定的灵魂。这种力量化身为一块九色石，隐藏在世间的某个角落，等待着有缘人的发现。故事的主人公，一个名叫云飞的年轻男子，是村里的一名普通牧羊人。他生性善良，心中充满了对未知世界的好奇。一天，当他在山间放牧时，偶然间在一处隐蔽的山洞中发现了一块散发着奇异光芒的石头。石头上流转着九种不同的色彩，犹如彩虹般绚烂。云飞被这块石头深深吸引，他决定将它带回家。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_2'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>二楼</strong></a></li><li class="li_4"><a>九色缘板块</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;村里的长者告诉他，这是传说中的九色石，拥有指引有缘人找到仙缘之灵的力量。云飞的心中涌现出一股强烈的渴望，他想要找到那个与自己有着九色缘的神秘存在。于是，他踏上了一段充满未知与挑战的旅程。云飞穿越了茂密的森林，跨过了湍急的河流，甚至在一次意外中险些丧命于山中的野兽之口。但他的勇气和决心从未动摇，九色石的光芒始终指引着他前进的方向。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_3'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>三楼</strong></a></li><li class="li_4"><a>九色缘板块</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><br/><p align="left" style="margin-left: 15px; margin-right: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;终于，在一个月光如水的夜晚，云飞来到了一片神秘的花海。在花海的中央，有一泓清澈的湖水，湖面上倒映着皎洁的月光。就在这时，一只拥有九色眼眸的神鹿出现在湖面之上，它的皮毛如同夜空中最亮的星辰，闪烁着温柔而神秘的光芒。云飞屏住呼吸，缓缓走近，九色石在他手中发出越来越耀眼的光芒。当他与神鹿的目光相遇时，九色石突然发出一道强烈的光芒，直冲天际，整个花海都被这股光芒照亮。这一刻，云飞感到了一种前所未有的连接，仿佛他与这只神鹿之间有着千丝万缕的联系。</p></li></ul>
+				</div>
+			</div>
+			<div class='pinglun_4'>
+				<div class="name_p">
+					
+				</div>
+				<div class="name">
+					<ul><li class="li_3"><a><strong>四楼</strong></a></li><li class="li_4"><a>九色缘板块</a></li></ul>
+				</div>
+				<div class="neirong">
+					<ul><li><p align="left" style="margin-left: 15px; margin-right: 15px; margin-top: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;神鹿缓缓走近云飞，用它那温暖的鼻子触碰了云飞手中的九色石。突然间，云飞的脑海中涌现出无数的画面，那是神鹿的记忆，也是他前世的记忆。他们曾在无数个轮回中相遇、相知、相伴，每一次的相遇都是九色缘的见证。云飞终于明白，九色缘不仅仅是一种神秘的缘分，它是一种超越时间和空间的深刻联系。他与神鹿的相遇，是命中注定，也是他们共同的宿命。从此，云飞与神鹿一同守护着这片土地，成为了传说中的一部分，而九色石则成为了他们永恒缘分的象征，流传在世间的每一个角落。</p></li></ul>
+				</div>
+			</div>
+			
+        </div>
+        
+        <div class='bottom'>
+            <div class='bottom_left'>
+                <p>IDN致力于普及最全的敦煌文化信息，从各平台选取最优报道。<br>
+                    © 2024年 界面交互设计与实践 保留所有权利。<br>
+                    -沪ICP备2220039号
+                </p>
+            </div>
+            <div class='bottom_right'>
+                <div class="links">
+                    <dl>
+                        <dt>关于IDN</dt>
+                        <dd><a href="#">关于</a></dd>
+                        <dd><a href="#">加入团队</a></dd>
+                        <dd><a href="#">工作机会</a></dd>
+                        <dd><a href="#">客户服务</a></dd>
+                        <dd><a href="#">帮助</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd><a href="#">如何注册</a></dd>
+                        <dd><a href="#">如何购买图册</a></dd>
+                        <dd><a href="#">如何获得最新咨询</a></dd>
+                        <dd><a href="#">积分是什么</a></dd>
+                        <dd><a href="#">购买未成功怎么办</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>合作伙伴</dt>
+                        <dd><a href="#">合作机构</a></dd>
+                        <dd><a href="#">合作个人</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <p>Copyright © 2024.Company name IDN reserved.界面交互设计与实践</p>
+            </ul>
+        </div>
+
+		<div class='p-parent'>
+			<div class="image-container">
+    			<img src="images/A08.png" alt="九色缘">
+			</div>
+<!--        <div class='parent'>
+            <div class='slider'>
+                <button type="button" id='right' class='right' name="button">
+                    <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                        <g>
+                            <path style='fill: #9d9d9d;' d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                                c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+                                "></path>
+                        </g>
+                    </svg>
+                </button>
+                <button type="button" id='left' class='left' name="button">
+                    <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                        <g>
+                            <path style='fill: #9d9d9d;' d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                                c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
+                        </g>
+                    </svg>
+                </button>
+                <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"></circle>
+                    <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"></circle>
+                    <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180"></circle>
+                    <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260"></circle>
+                    <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340"></circle>
+                    <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420"></circle>
+                    <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500"></circle>
+                    <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580"></circle>
+                    <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660"></circle>
+                </svg>
+                <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20"></circle>
+                    <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100"></circle>
+                    <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180"></circle>
+                    <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260"></circle>
+                    <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340"></circle>
+                    <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420"></circle>
+                    <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500"></circle>
+                    <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"></circle>
+                    <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"></circle>
+                </svg>
+                <div id='slide1' class='slide5 up1'></div>
+                <div id='slide2' class='slide6'></div>
+                <div id='slide3' class='slide7'></div>
+                <div id='slide4' class='slide8'></div>
+            </div>
+        </div>-->
+		</div>
+			
+</body>
+<!-- partial -->
+<script src="static/js/script.js"></script>
+</body></html>

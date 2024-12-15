@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>关于</title>
+    <!--        <link rel='stylesheet prefetch' href='css/1-css.css'>
+        <link rel='stylesheet prefetch' href='css/1-font-awesome.css'>-->
+    <link rel="stylesheet" href="css/1-style.css">
+	<link rel="stylesheet" href="css/cat.css">
+    <script src="js/1-index.js"></script>
+    <link href="static/css1/demo.css" rel="stylesheet">
+    <link href="static/css1/ionicons.min.css" rel="stylesheet">
+    <link href="static/css1/flutter.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style-1.css">
+    <style type="text/css">
+        body,td,th {
+        font-family: Karla, sans-serif;
+        color: #FFF;
+        }
+    </style>
+    <style>
+        canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <body>
+		<div class="blur-background"></div>
+        <div class="top_left">
+			<div class="top_left_title">
+				<img src="images/IDN 图标 02.png" width="220px" height="80px">
+				<ul>
+                    <!--<li><a class='li_6'><strong>IDN</strong></a></li>-->
+					<li><a><strong>上海IDN传媒文化有限公司</strong></a></li>
+                </ul>
+			</div>
+            <nav>
+                <menu>
+                    <menuitem id="demo1">
+                        <a href="index.html">IDN首页</a>
+                        <menu>
+                            <menuitem><a href="Luntan.html">论坛</a></menuitem>
+                            <menuitem>
+                                <a href="About.html">关于</a>
+                                <menu>
+                                    <menuitem><a href="About.html">联系方式</a></menuitem>
+                                    <menuitem><a href="About.html">赞助我们</a></menuitem>
+                                    <menuitem><a href="About.html">加入我们</a></menuitem>
+                                </menu>
+                            </menuitem>
+                            <menuitem id="demo2"><a href="denglu.html" target="_blank">登录</a></menuitem>
+                            <menuitem id="demo3">
+                                <a>小游戏</a>
+                                <menu>
+                                    <menuitem><a href="game/game-wjzz/维京战争.html">游戏-维京战争</a></menuitem>
+                                    <menuitem><a href="game/game-bwxq/保卫星球.html">游戏-保卫星球</a></menuitem>
+                                    <menuitem><a href="game/game-ywzq/勇往直前.html" target="_blank">游戏-勇往直前</a></menuitem>
+                                    <menuitem><a href="game/game-fjdz/飞机大战.html" target="_blank">游戏-飞机大战</a></menuitem>
+                                </menu>
+                            </menuitem>
+                        </menu>
+                    </menuitem>
+                </menu>
+            </nav>
+        </div>
+<!--        <div class='beijing_1'>
+            <canvas id=c></canvas>
+            <script>
+                let w = c.width = window.innerWidth*1.15;
+                let h = c.height = window.innerHeight*1.9;
+                
+                const ctx = c.getContext('2d');
+                const opts = {
+                	hexLength: 30,
+                	lenFn: ({ len, t }) =>
+                	  len + Math.sin(t),
+                	radFn: ({ rad, len, t, excitement }) =>
+                	  rad + (excitement + opts.propFn({ len, t }))*2 / 4,
+                	propFn: ({ len, t }) => 
+                	  len / opts.hexLength / 10 - t,
+                	excitementFn: ({ len, t }) =>
+                	   Math.sin(opts.propFn({ len, t }))**2,
+                	colorFn: ({ rad, excitement, t }) => 
+                	  `hsl(${rad / Math.TAU * 360 + t}, ${excitement * 100}%, ${20 + excitement * 50}%)`,
+                	timeStep: .01,
+                	randomJig: 8,
+                
+                	repaintColor: 'rgba(34,34,34,0.1)'
+                  };
+                let tick = 0;
+                
+                Math.TAU = 6.28318530717958647692;
+                
+                const vertices = [];
+                class Vertex {
+                  constructor({ x, y }) {
+                	this.len = Math.sqrt(x*x + y*y);
+                	this.rad = Math.acos(x / this.len) * (y > 0 ? 1 : -1) + .13;
+                	this.prevPoint = { x, y };
+                  }
+                
+                  step() {
+                	const excitement = opts.excitementFn({ len: this.len, t: tick });
+                	const param = { 
+                	  len: this.len,
+                	  rad: this.rad,
+                	  t: tick,
+                	  excitement
+                	};
+                	const nextLen = opts.lenFn(param);
+                	const nextRad = opts.radFn(param);
+                	const color = opts.colorFn(param);
+                
+                	ctx.strokeStyle = color;
+                	ctx.lineWidth = excitement + .2;
+                	ctx.beginPath();
+                	ctx.moveTo(this.prevPoint.x, this.prevPoint.y);
+                	this.prevPoint.x = nextLen * Math.cos(nextRad) + 
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	this.prevPoint.y = nextLen * Math.sin(nextRad) +
+                	  Math.random() * (1-excitement)**2 * opts.randomJig * 2 - opts.randomJig;
+                	ctx.lineTo(this.prevPoint.x, this.prevPoint.y);
+                	ctx.stroke();
+                  }
+                
+                  static gen() {
+                	vertices.length = 0; 
+                	const hexCos = Math.cos(Math.TAU / 12) * opts.hexLength;
+                	const hexSin = Math.sin(Math.TAU / 12) * opts.hexLength;
+                
+                
+                	let alternanceX = false;
+                	for(let x = 0; x < w; x += hexCos) {
+                	  let alternance = alternanceX = !alternanceX;
+                	  for(let y = 0; y < h; y += hexSin + opts.hexLength) {
+                		alternance = !alternance;
+                		vertices.push(new Vertex({
+                		  x: x - w / 2,
+                		  y: y + alternance * hexSin - h / 2
+                		}))
+                	  }
+                	}
+                
+                  }
+                }
+                
+                Vertex.gen();
+                
+                ctx.fillStyle = '#222';
+                ctx.fillRect(0, 0, w, h);
+                const anim = () => {
+                  window.requestAnimationFrame(anim);
+                
+                  tick += opts.timeStep;
+                
+                  ctx.fillStyle = opts.repaintColor;
+                  ctx.fillRect(0, 0, w, h);
+                
+                  ctx.translate(w/2, h/2);
+                  vertices.forEach((vertex) => vertex.step());
+                  ctx.translate(-w/2, -h/2);
+                }
+                anim();
+                
+                window.addEventListener('resize', () => {
+                  w = c.width = window.innerWidth;
+                  h = c.height = window.innerHeight;
+                
+                  Vertex.gen();
+                  tick = 0;
+                  ctx.fillStyle = '#222';
+                  ctx.fillRect(0, 0, w, h);
+                })
+            </script>
+        </div>-->
+        <div class='new_game'>
+			<div class="Something_1">
+				<ul><li class="li_5"><strong><a href="lxfs">联系方式</a></strong></li></ul>
+				<div class="main">
+				<span class="stand"></span>
+				<div class="cat">
+				 <div class="body_1"></div>
+				 <div class="head_1">
+				   <div class="ear_1"></div>
+				 <div class="ear_1"></div>
+				 </div>
+				 <div class="face">
+				  <div class="nose"></div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 </div>
+				 <div class="tail-container">
+				  <div class="tail_1">
+					<div class="tail_1">
+					  <div class="tail_1">
+						<div class="tail_1">
+						  <div class="tail_1">
+							<div class="tail_1">
+							  <div class="tail_1"></div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				 </div>
+			   </div>
+			</div>
+			</div>
+			<div class="Something_2">
+				<ul><li class="li_5"><strong><a href="#zzwm">赞助我们</a></strong></li></ul>
+            	<div class="main">
+				<span class="stand"></span>
+				<div class="cat">
+				 <div class="body_2"></div>
+				 <div class="head_2">
+				   <div class="ear_2"></div>
+				 <div class="ear_2"></div>
+				 </div>
+				 <div class="face">
+				  <div class="nose"></div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 </div>
+				 <div class="tail-container">
+				  <div class="tail_2">
+					<div class="tail_2">
+					  <div class="tail_2">
+						<div class="tail_2">
+						  <div class="tail_2">
+							<div class="tail_2">
+							  <div class="tail_2"></div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				 </div>
+			   </div>
+			</div>
+			</div>
+			<div class="Something_3">
+				<ul><li class="li_5"><strong><a href="#jrwm">加入我们</a></strong></li></ul>
+				<div class="main">
+				<span class="stand"></span>
+				<div class="cat">
+				 <div class="body_3"></div>
+				 <div class="head_3">
+				   <div class="ear_3"></div>
+				 <div class="ear_3"></div>
+				 </div>
+				 <div class="face">
+				  <div class="nose"></div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 <div class="whisker-container">
+				   <div class="whisker"></div>
+				   <div class="whisker"></div>
+				 </div>
+				 </div>
+				 <div class="tail-container">
+				  <div class="tail_3">
+					<div class="tail_3">
+					  <div class="tail_3">
+						<div class="tail_3">
+						  <div class="tail_3">
+							<div class="tail_3">
+							  <div class="tail_3"></div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				 </div>
+			   </div>
+			</div>
+			</div>
+			<div class="Thing_1">
+				<ul><li class="li_3">
+					<h2 id="lxfs" style="margin: 15px"><strong>联系方式</strong></h2><hr/>
+					<p style="margin-top: 15px;margin-left: 25px">你可以通过以下方式联系我们：</p>
+					<p style="margin-top: 15px;margin-left: 25px">邮箱：***********@qq.com&nbsp;&nbsp;&nbsp;&nbsp;***********@gmali.com&nbsp;&nbsp;&nbsp;&nbsp;***********@163.com</p>
+					<p style="margin-top: 15px;margin-left: 25px">电话：+86 *** **** ****&nbsp;&nbsp;&nbsp;&nbsp;
+						+86 *** **** ****&nbsp;&nbsp;&nbsp;&nbsp;+86 *** **** ****</p>
+				</li></ul>
+			</div>
+			<div class="Thing_2">
+				<ul><li class="li_3"><h2 id="zzwm" style="margin: 15px"><strong>赞助我们</strong></h2></li></ul>
+				<div class="erweima_1"><img src="images/二维码.png" width="230" height="230" alt="" style="margin: 10px"/></div>
+			  <div class="erweima_2"><img src="images/二维码.png" width="230" height="230" alt="" style="margin: 10px"/></div>
+			</div>
+			<div class="Thing_3">
+				<ul><li class="li_3"><h2 id="jrwm" style="margin: 15px"><strong>加入我们</strong></h2></li></ul>
+				<div class="erweima_1"><img src="images/二维码.png" width="230" height="230" alt="" style="margin: 10px"/></div>
+				<div class="erweima_2"><img src="images/二维码.png" width="230" height="230" alt="" style="margin: 10px"/></div>
+			</div>
+        </div>
+        <div class='bottom'>
+            <div class='bottom_left'>
+                <p>IDN致力于普及最全的敦煌文化信息，从各平台选取最优报道。<br>
+                    © 2024年 界面交互设计与实践 保留所有权利。<br>
+                    -沪ICP备2220039号
+                </p>
+            </div>
+            <div class='bottom_right'>
+                <div class="links">
+                    <dl>
+                        <dt>关于IDN</dt>
+                        <dd><a href="#">关于</a></dd>
+                        <dd><a href="#">加入团队</a></dd>
+                        <dd><a href="#">工作机会</a></dd>
+                        <dd><a href="#">客户服务</a></dd>
+                        <dd><a href="#">帮助</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd><a href="#">如何注册</a></dd>
+                        <dd><a href="#">如何购买图册</a></dd>
+                        <dd><a href="#">如何获得最新咨询</a></dd>
+                        <dd><a href="#">积分是什么</a></dd>
+                        <dd><a href="#">购买未成功怎么办</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>合作伙伴</dt>
+                        <dd><a href="#">合作机构</a></dd>
+                        <dd><a href="#">合作个人</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <p>Copyright © 2024.Company name IDN reserved.界面交互设计与实践</p>
+            </ul>
+        </div>
+</body>
+</html>
