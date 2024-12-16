@@ -46,7 +46,7 @@
 	height: 460px;
 	left:280px;
 	right:0;
-	background:rgba(255, 255, 255, 0.04); /*半透明*/
+	background:rgba(75, 60, 60, 0.6); /*半透明*/
 	margin:0 auto;
 	border-radius: 30px;
 	backdrop-filter: blur(6px);/*磨砂质感*/
@@ -58,7 +58,7 @@
 	height: 460px;
 	left:280px;
 	right:0;
-	background:rgba(255, 255, 255, 0.04); 
+	background:rgba(75, 60, 60, 0.6); 
 	margin:0 auto;
 	border-radius: 30px;
 	backdrop-filter: blur(6px);
@@ -71,7 +71,7 @@
 	height: 1460px;
 	left:280px;
 	right:0;
-	background:rgba(255, 255, 255, 0.04); /*半透明*/
+	background:rgba(75, 60, 60, 0.6); /*半透明*/
 	margin:0 auto;
 	border-radius: 30px;
 	backdrop-filter: blur(6px);/*磨砂质感*/
@@ -304,7 +304,7 @@ li{
 	height: 250px;
 	left:280px;
 	right:0;
-	background:rgba(76, 60, 60, 0.9); 
+	background:rgba(75, 60, 60, 0.9); 
 	margin:0 auto;
 }
 .bottom_left{
@@ -382,7 +382,7 @@ li{
 	height: 1500px;
 	left:280px;
 	right:0;
-	background:rgba(255, 255, 255, 0.04); 
+	background:rgba(75, 60, 60, 0.6); 
 	margin:0 auto;
 	border-radius: 30px;
 	backdrop-filter: blur(6px);
