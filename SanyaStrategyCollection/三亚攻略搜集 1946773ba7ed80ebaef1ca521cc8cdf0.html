@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>三亚攻略搜集</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1946773b-a7ed-80eb-aef1-ca521cc8cdf0" class="page sans"><header><img class="page-cover-image" src="https://syipb.sanya.gov.cn/tzcjjsite/ywq/202404/e51eabc7843a4751b4e525996648801b/images/0c17029a61cb424482249e8d16dcaf01.jpg" style="object-position:center 77.4%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏝️</span></div><h1 class="page-title">三亚攻略搜集</h1><p class="page-description"></p></header><div class="page-body"><ul id="1946773b-a7ed-8002-a5f6-f568ddc53dae" class="toggle"><li><details open=""><summary><a href="https://post.smzdm.com/p/al84q4pg/">三亚旅游全攻略：必去景点与实用贴士大公开！_旅游出行_什么值得买</a></summary><p id="1946773b-a7ed-8010-9034-dab661e6aca8" class="">这是一篇关于三亚旅游的详尽攻略，主要包含以下几个方面的内容：</p><p id="1946773b-a7ed-808e-bf7c-df560427e008" class=""><strong>1. 出行前准备：</strong></p><ul id="1946773b-a7ed-80ed-a499-f0556aa950a7" class="bulleted-list"><li style="list-style-type:disc">需携带身份证、<mark class="highlight-purple"><mark class="highlight-default_background">离岛证明</mark></mark>等必要证件</li></ul><ul id="1946773b-a7ed-805c-a48b-e3e82a913c5e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">购买免税品需提前预订回程机票作为凭证</mark></li></ul><ul id="1946773b-a7ed-80d2-b3f8-e6f617a4bb0e" class="bulleted-list"><li style="list-style-type:disc">部分酒店提供95折优惠和免费接送，但需提前预约</li></ul><ul id="1946773b-a7ed-8001-a394-c82b03e07e43" class="bulleted-list"><li style="list-style-type:disc">建议携带干粮和矿泉水以节省开支</li></ul><p id="1946773b-a7ed-80e1-9ae7-d588a977b3b2" class=""><strong>2. 必游景点：</strong></p><ul id="1946773b-a7ed-800e-af62-c386d4680ac2" class="bulleted-list"><li style="list-style-type:disc">天涯海角 - 以五大名石和南天一柱著称</li></ul><ul id="1946773b-a7ed-8086-afdf-e2360edeade6" class="bulleted-list"><li style="list-style-type:disc">大东海 - 特色是椰梦长廊和菠萝广场</li></ul><ul id="1946773b-a7ed-80ce-870d-f9defebf7ff4" class="bulleted-list"><li style="list-style-type:disc">三亚千古情 - 展现黎苗文化的表演场所</li></ul><ul id="1946773b-a7ed-8060-bc71-cfb28301aca2" class="bulleted-list"><li style="list-style-type:disc">南山寺 - 以108米高的海上观音像闻名</li></ul><ul id="1946773b-a7ed-804d-83f3-cde7c0732a06" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">西岛和蜈支洲岛 - 前者适合骑行拍照，后者适合潜水</mark></li></ul><ul id="1946773b-a7ed-8015-b561-dc1f5a8b64a3" class="bulleted-list"><li style="list-style-type:disc">亚特兰蒂斯水世界 - 集酒店和水上乐园于一体</li></ul><p id="1946773b-a7ed-8052-ac1e-df0702b9abec" class=""><strong>3. 交通方式：</strong></p><ul id="1946773b-a7ed-80b2-963c-d006813b5deb" class="bulleted-list"><li style="list-style-type:disc">飞机：可选择三亚凤凰国际机场或海口美兰国际机场</li></ul><ul id="1946773b-a7ed-805a-bfb7-c7fa8eb4e35e" class="bulleted-list"><li style="list-style-type:disc">火车/高铁：可抵达三亚站、亚龙湾站或凤凰机场站</li></ul><ul id="1946773b-a7ed-80be-8b31-f9acb04eb2c3" class="bulleted-list"><li style="list-style-type:disc">自驾：可通过琼州海峡轮渡运送私家车</li></ul><p id="1946773b-a7ed-80f0-80a5-df88591f4b5b" class=""><strong>4. 实用建议：</strong></p><ul id="1946773b-a7ed-806c-b967-e5aca0cbd45d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">11月至次年2月是旺季，但需注意天气变化</mark></li></ul><ul id="1946773b-a7ed-8080-b687-c1adb1d266c9" class="bulleted-list"><li style="list-style-type:disc">选择住宿时要权衡性价比，海棠湾设施好但价格高，大东海地理位置好</li></ul><ul id="1946773b-a7ed-8066-a38b-d978e29b3a75" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">参观南山寺无需额外购买香烛</mark></li></ul><ul id="1946773b-a7ed-80ab-a25f-e7f0fb8b7dd7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">亚特兰蒂斯酒店有免费开放的海洋生物展示区</mark></li></ul><p id="1946773b-a7ed-80be-8f39-d492cbb344eb" class=""><strong>5. 避坑指南：</strong></p><ul id="1946773b-a7ed-8073-8f2b-ef3df63b302a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">大东海不适合高端潜水活动</mark></li></ul><ul id="1946773b-a7ed-808f-9108-c5e93803f9b4" class="bulleted-list"><li style="list-style-type:disc">从机场到市区要选择正规出租车</li></ul><ul id="1946773b-a7ed-803b-b2da-c4f8cbd26d81" class="bulleted-list"><li style="list-style-type:disc">注意防晒，即使阴天也要做好防护</li></ul><ul id="1946773b-a7ed-80d5-aa9d-e73ca6fbcc42" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">景区纪念品价格偏高，建议在市区集市购买</mark></li></ul><ul id="1946773b-a7ed-8076-bf6f-d4a5f213c26b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">行程安排不要过于紧凑</mark></li></ul><ul id="1946773b-a7ed-8045-867c-e95bf51ee55e" class="bulleted-list"><li style="list-style-type:disc">建议提前在线购票以享受优惠</li></ul><ul id="1946773b-a7ed-806b-ab96-f1042c1ea853" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">建议随身携带现金应急</mark></li></ul></details></li></ul><ul id="1946773b-a7ed-800f-bad4-ed16b78cac3c" class="block-color-orange_background toggle"><li><details open=""><summary><a href="https://www.zhihu.com/tardis/bd/art/424370034">三亚四大海湾吃、住、游、玩攻略（超详细）—三亚旅游攻略</a></summary><p id="1946773b-a7ed-80e3-ae97-d7a4a1839cce" class=""><strong>三亚四大海湾详细攻略：</strong></p><p id="1946773b-a7ed-8076-bce2-d9f87cffa0e0" class=""><strong>1. 三亚湾</strong></p><p id="1946773b-a7ed-8094-b523-e29122ad387e" class="">地理位置：</p><ul id="1946773b-a7ed-80ac-9845-ee24111a8a57" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">紧邻三亚市区，拥有20多公里的椰树滨海大道</mark></li></ul><ul id="1946773b-a7ed-8088-8824-e374ba044b3e" class="bulleted-list"><li style="list-style-type:disc">距离凤凰机场仅10公里，车程约20分钟</li></ul><p id="1946773b-a7ed-8048-8c42-ffc4feecc0e6" class="">特色与优势：</p><ul id="1946773b-a7ed-808e-8dfe-ececc91ccb8a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">是观赏日落的绝佳地点</mark></li></ul><ul id="1946773b-a7ed-8000-bbe1-c38f6bc60720" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">晚上氛围热闹，有街头表演和酒吧</mark></li></ul><ul id="1946773b-a7ed-8081-ade0-ed0215ec3497" class="bulleted-list"><li style="list-style-type:disc">交通便利，适合购物和餐饮</li></ul><p id="1946773b-a7ed-80e7-9fc4-d4aec4d06182" class="">住宿选择：</p><ul id="1946773b-a7ed-806c-987a-e18acc81716f" class="bulleted-list"><li style="list-style-type:disc">以经济型酒店为主</li></ul><ul id="1946773b-a7ed-8060-b011-ebf1fc57d402" class="bulleted-list"><li style="list-style-type:disc">星级酒店约500元/晚</li></ul><ul id="1946773b-a7ed-80bb-8ef4-e14d53b3b080" class="bulleted-list"><li style="list-style-type:disc">特色客栈约200元/晚</li></ul><ul id="1946773b-a7ed-80da-825a-e57322f7099c" class="bulleted-list"><li style="list-style-type:disc">推荐住在沿海高层小区，能直接欣赏海景</li></ul><p id="1946773b-a7ed-801c-94c8-e5bf932c8570" class="">附近景点：</p><ul id="1946773b-a7ed-8060-b25c-f201617ca277" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">椰梦长廊、鹿回头公园、临春岭公园、凤凰岭</mark></li></ul><ul id="1946773b-a7ed-80d8-998d-fe8acc296f15" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">距离西岛、天涯海角、南山寺较近，可乘公交直达</mark></li></ul><p id="1946773b-a7ed-80f8-9d98-f0da6f3e400f" class="">
+</p><p id="1946773b-a7ed-8009-b6b7-d374646bd273" class=""><strong>2. 大东海</strong></p><p id="1946773b-a7ed-80d8-9c5c-eff88d419ef9" class="">区位特点：</p><ul id="1946773b-a7ed-80a3-a5c6-da5eb43642bf" class="bulleted-list"><li style="list-style-type:disc">是三亚最早开发的度假区</li></ul><ul id="1946773b-a7ed-80e9-b774-cf1ab9ae8a9d" class="bulleted-list"><li style="list-style-type:disc">位于三亚湾和亚龙湾之间</li></ul><ul id="1946773b-a7ed-80e3-b5cb-fc87089905d4" class="bulleted-list"><li style="list-style-type:disc">离市区最近的海湾</li></ul><p id="1946773b-a7ed-8001-b180-fc0b595a59a5" class="">娱乐设施：</p><ul id="1946773b-a7ed-80ae-8cfb-ff4836deac90" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">水上项目丰富多样</mark></li></ul><ul id="1946773b-a7ed-80b3-a952-fecfeb5b0d12" class="bulleted-list"><li style="list-style-type:disc">晚上有热闹的酒吧长廊</li></ul><ul id="1946773b-a7ed-8080-8612-cde5edc8fb45" class="bulleted-list"><li style="list-style-type:disc">可租赁救生圈、遮阳伞、躺椅等设施</li></ul><p id="1946773b-a7ed-8030-b0e2-ec02aa704d3b" class="">住宿价位：</p><ul id="1946773b-a7ed-80c8-a018-fb1ae226a117" class="bulleted-list"><li style="list-style-type:disc">经济型酒店为主</li></ul><ul id="1946773b-a7ed-8038-9463-fa542c6e7b8e" class="bulleted-list"><li style="list-style-type:disc">也有银泰、文华东方等豪华酒店</li></ul><ul id="1946773b-a7ed-8097-a678-dc9f108ff91f" class="bulleted-list"><li style="list-style-type:disc">价格区间600-2000元不等</li></ul><ul id="1946773b-a7ed-80bc-b5df-d72ecf951f46" class="bulleted-list"><li style="list-style-type:disc">特色客栈约300元</li></ul><p id="1946773b-a7ed-8077-a074-e13a776ff799" class="">
+</p><p id="1946773b-a7ed-806c-b48b-d9b78b246494" class=""><strong>3. 亚龙湾</strong></p><p id="1946773b-a7ed-808b-9b76-e25f30734914" class="">自然环境：</p><ul id="1946773b-a7ed-80b7-ac08-d5a8817d259c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">拥有7000米银白色海滩</mark></li></ul><ul id="1946773b-a7ed-80f7-81c5-eaa00e713441" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">沙质最细腻、海水最清澈</mark></li></ul><ul id="1946773b-a7ed-80c0-9d66-c753e8fa0970" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">适合游泳、潜水和水上运动</mark></li></ul><ul id="1946773b-a7ed-8011-b0d7-fc4b35b7a8c2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">珊瑚资源丰富，能见度高</mark></li></ul><p id="1946773b-a7ed-80fa-b66c-fec6cb0af55e" class="">酒店特色：</p><ul id="1946773b-a7ed-8025-a4c2-ea80dbd3c906" class="bulleted-list"><li style="list-style-type:disc">国际知名酒店云集（万豪、希尔顿、喜来登等）</li></ul><ul id="1946773b-a7ed-80bb-8b72-fac23529bf83" class="bulleted-list"><li style="list-style-type:disc">价格区间800-2000元/晚</li></ul><ul id="1946773b-a7ed-80f3-8b6d-e643e276a1ab" class="bulleted-list"><li style="list-style-type:disc">也有提供接送服务的经济型住宿</li></ul><p id="1946773b-a7ed-8021-be57-e51238692468" class="">
+</p><p id="1946773b-a7ed-8017-9fba-c42557a8696f" class=""><strong>4. 海棠湾</strong></p><p id="1946773b-a7ed-806d-8be0-e5cd9f893ef9" class="">环境特点：</p><ul id="1946773b-a7ed-8021-9ba9-e4252aaead8d" class="bulleted-list"><li style="list-style-type:disc">开发最晚，环境最幽静</li></ul><ul id="1946773b-a7ed-801c-b61c-dbccfc996e4a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">人流较少，避开城市喧嚣</mark></li></ul><ul id="1946773b-a7ed-8050-b6a6-d545deea7800" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">水清沙白，但风浪较大</mark></li></ul><p id="1946773b-a7ed-80e4-9272-cfc8593a06ab" class="">配套设施：</p><ul id="1946773b-a7ed-80b5-842f-ebfed170cda6" class="bulleted-list"><li style="list-style-type:disc">拥有全球最大单体免税店</li></ul><ul id="1946773b-a7ed-80b2-a082-de8edb96a362" class="bulleted-list"><li style="list-style-type:disc">是蜈支洲岛的登岛口</li></ul><ul id="1946773b-a7ed-804f-bdec-e39a11ca5b1b" class="bulleted-list"><li style="list-style-type:disc">以奢华酒店为主，价格1500-3000元/晚</li></ul><p id="1946773b-a7ed-80c0-804a-e6151b4462fd" class=""><strong>重要提示：</strong></p><ul id="1946773b-a7ed-8001-b07a-db34205c11ad" class="bulleted-list"><li style="list-style-type:disc">游泳安全：严格遵守安全区域，注意天气变化</li></ul><ul id="1946773b-a7ed-80b3-b86a-d37a26241b05" class="bulleted-list"><li style="list-style-type:disc">防晒措施：全天候防晒，带好防护用品</li></ul><ul id="1946773b-a7ed-8015-8a9e-dccaad4b3539" class="bulleted-list"><li style="list-style-type:disc">交通建议：建议提前了解公交线路或选择正规出租车</li></ul><ul id="1946773b-a7ed-80f9-b3f1-ff46ca692385" class="bulleted-list"><li style="list-style-type:disc">购物提醒：景区商品较贵，建议到市区购物</li></ul><ul id="1946773b-a7ed-80a7-9932-e0c6d6dddbb9" class="bulleted-list"><li style="list-style-type:disc">行程安排：避免过于紧凑，预留充足休息时间</li></ul><p id="1946773b-a7ed-804b-ae46-d89a840515ba" class="">
+</p></details></li></ul><ul id="1946773b-a7ed-805c-9d9f-e33c2d0a1d0c" class="toggle"><li><details open=""><summary><a href="https://zhuanlan.zhihu.com/p/338278166">七年旅居经验告诉你三亚应该怎么玩（纯干货） - 知乎</a></summary><p id="1946773b-a7ed-8050-ace7-fe2b9223dc3f" class="">以下是对您提供的三亚旅游攻略的总结：</p><h3 id="1946773b-a7ed-805b-90cb-fc02365315d6" class="">一、选择三亚的哪个湾区</h3><ul id="1946773b-a7ed-8093-b27e-d9a01181e576" class="bulleted-list"><li style="list-style-type:disc"><strong>三亚湾</strong>：紧挨三亚市区，机场和火车站都在附近，交通便利。沿海有公共沙滩和泳场，景点有南山文化旅游区、大小洞天、天涯海角、椰梦长廊等。优点是<mark class="highlight-purple">椰梦长廊景观不错</mark>，生活便利，滨海大道沿线大排档海鲜价格合适。<mark class="highlight-purple">缺点是市区建设一般，海水较浑浊，海滩人多。</mark></li></ul><ul id="1946773b-a7ed-8029-ad49-c402e43b7e89" class="bulleted-list"><li style="list-style-type:disc"><strong>大东海</strong>：位于市区范围内，紧挨三亚湾，开发较早。景点有鹿回头风景区和大东海度假区，度假区热闹且免费开放。优点是热闹有烟火气，夜景漂亮。<mark class="highlight-purple">缺点是人多，海上游玩项目不丰富且较坑。</mark></li></ul><ul id="1946773b-a7ed-800b-bb5c-d9f7bfe58b0d" class="bulleted-list"><li style="list-style-type:disc"><strong>亚龙湾</strong>：远离市区，海水清澈，海滩优质，沙子细腻，五星级酒店林立。景点有亚龙湾热带天堂森林公园、亚龙湾海底世界等。优点是<mark class="highlight-purple">沙质好，海水平缓适合游泳</mark>，五星级酒店多。缺点是部分酒店相比海棠湾较旧。</li></ul><ul id="1946773b-a7ed-8008-aa9d-ef6b9985bf7b" class="bulleted-list"><li style="list-style-type:disc"><strong>海棠湾</strong>：风景好且安静，五星级酒店新且多，有亚特兰蒂斯和免税店。景点有蜈支洲岛、亚特兰蒂斯水世界和失落空间水族馆。优点是酒店设施新，环境好，海滩静谧适合度假。缺点是<mark class="highlight-purple">浪大不适合海里游泳。</mark></li></ul><ul id="1946773b-a7ed-80ca-8aab-dc053454fcac" class="bulleted-list"><li style="list-style-type:disc"><strong>清水湾</strong>：新开发地区，高档酒店不多但环境舒适，有游艇会和高尔夫球会。景点有赤岭风景区、南湾猴岛风景区、呆呆岛等。<mark class="highlight-purple">优点是人少，环境好。缺点是高档酒店少。</mark></li></ul><h3 id="1946773b-a7ed-804c-bddc-c8b6fec45bf8" class="">二、三亚有什么可玩的</h3><ul id="1946773b-a7ed-80e9-b705-df65bef30948" class="bulleted-list"><li style="list-style-type:disc"><strong>游泳</strong>：推荐在海浪平缓的亚龙湾游泳，其为U形湾，天然浴场，风浪小且海水清澈。</li></ul><ul id="1946773b-a7ed-80ec-a11e-de460070907a" class="bulleted-list"><li style="list-style-type:disc"><strong>潜水</strong>：推荐西岛或蜈支洲岛，水质清澈，海洋物种丰富。</li></ul><ul id="1946773b-a7ed-80ca-b169-f331ef241921" class="bulleted-list"><li style="list-style-type:disc"><strong>游艇</strong>：三亚湾、大东海或清水湾都适合。</li></ul><ul id="1946773b-a7ed-806e-a906-d7d88859a435" class="bulleted-list"><li style="list-style-type:disc"><strong>海上娱乐项目</strong>：如快艇、香蕉船等，在亚龙湾、蜈支洲岛是不错的选择。</li></ul><ul id="1946773b-a7ed-80eb-8bf4-f7daaff37883" class="bulleted-list"><li style="list-style-type:disc"><strong>冲浪</strong>：推荐在浪较大的海棠湾或清水湾，清水湾更适合。</li></ul><h3 id="1946773b-a7ed-80a6-bd52-d1ad027ab201" class="">三、选择什么样的旅游方式</h3><ul id="1946773b-a7ed-8033-96bb-ddd5c67f9754" class="bulleted-list"><li style="list-style-type:disc"><strong>打卡景点为主的游玩方式</strong>：推荐的景点有蜈支洲岛、亚特兰蒂斯水世界、亚龙湾热带天堂森林公园、呆呆岛、南山文化旅游区等。</li></ul><ul id="1946773b-a7ed-8008-91e3-ea8792fe5ad0" class="bulleted-list"><li style="list-style-type:disc"><strong>休闲度假为主的游玩方式</strong>：找几个好酒店，享受酒店设施、游泳、沙滩等，体验亚特兰蒂斯水世界、club med亲子玩乐、游艇出海等。</li></ul><h3 id="1946773b-a7ed-8061-9084-c7ab2fa9b35d" class="">四、怎么选择住宿</h3><ul id="1946773b-a7ed-80ae-bc28-f5425fbaf91f" class="bulleted-list"><li style="list-style-type:disc"><strong>三亚湾</strong>：好酒店较少，推荐康年酒店、国光豪生和club med度假村。</li></ul><ul id="1946773b-a7ed-800a-a276-e9d6592d974d" class="bulleted-list"><li style="list-style-type:disc"><strong>大东海</strong>：悦榕庄、山海天、东方文华等酒店不错，悦榕庄名气大。</li></ul><ul id="1946773b-a7ed-80cf-bc5e-ea375079a369" class="bulleted-list"><li style="list-style-type:disc"><strong>亚龙湾</strong>：美高梅、丽思卡尔顿和柏悦等五星级酒店较多。</li></ul><ul id="1946773b-a7ed-8048-bd35-d99595cc9ccd" class="bulleted-list"><li style="list-style-type:disc"><strong>海棠湾</strong>：亚特兰蒂斯、艾迪逊和君悦等酒店设施新，亚特兰蒂斯名气大。</li></ul><h3 id="1946773b-a7ed-80e4-b174-d01a259f9234" class="">五、怎么选择交通</h3><ul id="1946773b-a7ed-80ef-94b0-f16413974749" class="bulleted-list"><li style="list-style-type:disc"><strong>公交</strong>：虽便利但距离远，不推荐。</li></ul><ul id="1946773b-a7ed-8070-aeb1-d96f84461dff" class="bulleted-list"><li style="list-style-type:disc"><strong>打车</strong>：较贵，湾区间距离远。</li></ul><ul id="1946773b-a7ed-80b0-ae31-da40c95a50f6" class="bulleted-list"><li style="list-style-type:disc"><strong>租车</strong>：经济型车一天二三百，适合往返于不同湾区或景点酒店之间。</li></ul><ul id="1946773b-a7ed-8023-a0c7-e0ac59523461" class="bulleted-list"><li style="list-style-type:disc"><strong>包车</strong>：价格与租车差不多，省却开车烦恼。</li></ul><h3 id="1946773b-a7ed-8019-b846-f305ea19aeb0" class="">六、大致的花费如何</h3><ul id="1946773b-a7ed-80d5-acaa-ce3e3a1a82cf" class="bulleted-list"><li style="list-style-type:disc"><strong>吃</strong>：人均用餐100元左右，可在商业区吃得很好。</li></ul><ul id="1946773b-a7ed-80ee-b470-c37e749f25bb" class="bulleted-list"><li style="list-style-type:disc"><strong>住</strong>：旺季一线五星级酒店两三千元，老旧五星级酒店一千多元。</li></ul><ul id="1946773b-a7ed-80c5-b771-fcaba7e791c6" class="bulleted-list"><li style="list-style-type:disc"><strong>行</strong>：租车人均每天200元以内。</li></ul><ul id="1946773b-a7ed-80e5-b3c6-dd10b04d0a0f" class="bulleted-list"><li style="list-style-type:disc"><strong>购</strong>：建议在免税城购物。</li></ul><ul id="1946773b-a7ed-806f-86c2-f9a79271ca05" class="bulleted-list"><li style="list-style-type:disc"><strong>娱</strong>：景点门票和海上项目人均一千元左右。</li></ul><h3 id="1946773b-a7ed-806e-abeb-f414dbc94299" class="">七、如何避坑</h3><ul id="1946773b-a7ed-80c1-83fb-c8e5ed807e40" class="bulleted-list"><li style="list-style-type:disc">不跟团，避免大部分坑。</li></ul><ul id="1946773b-a7ed-80ae-8a94-d30f0012372e" class="bulleted-list"><li style="list-style-type:disc">不跟低价团，高端团或私家团无购物无自费可考虑。</li></ul><ul id="1946773b-a7ed-80cd-b9b1-ded1a78b6cb5" class="bulleted-list"><li style="list-style-type:disc">租车游玩避免在景区附近用餐。</li></ul><ul id="1946773b-a7ed-809a-8c87-d502c3eec645" class="bulleted-list"><li style="list-style-type:disc">不买碧玺、水晶等，除免税店外不建议购物。</li></ul><ul id="1946773b-a7ed-80d7-b6e7-ec69a5bb1cbe" class="bulleted-list"><li style="list-style-type:disc">不轻信攻略中提及的第一市场附近的店家。</li></ul><ul id="1946773b-a7ed-80c9-baea-fb749793a3cb" class="bulleted-list"><li style="list-style-type:disc">海南当地名吃如文昌鸡、抱罗粉等普遍不好吃，清补凉和海鲜不错。</li></ul><ul id="1946773b-a7ed-8019-baec-e1c82c7a59da" class="bulleted-list"><li style="list-style-type:disc">谨慎对待拉客现象，别贪便宜。</li></ul></details></li></ul><ul id="1946773b-a7ed-80eb-87d9-e8ffe2205e48" class="block-color-orange_background toggle"><li><details open=""><summary><a href="https://www.mafengwo.cn/gonglve/ziyouxing/65006.html">超详细的三亚景点汇总，看这一篇就够了~ - 马蜂窝</a></summary><h3 id="1946773b-a7ed-8047-ac54-c9d98adee1a1" class=""><strong>三亚旅游攻略总结</strong></h3><h3 id="1946773b-a7ed-8029-a370-cf1a34dc6b96" class=""><strong>一、景点分类</strong></h3><p id="1946773b-a7ed-8092-adb4-f2343fc2dcc3" class="">三亚的景点大致可以分为以下几类：</p><ol type="1" id="1946773b-a7ed-80dc-8f7a-d91a79babb51" class="numbered-list" start="1"><li><strong>玩海</strong>：<ul id="1946773b-a7ed-809f-bd4e-fcef1feadd92" class="bulleted-list"><li style="list-style-type:disc"><strong>四大海湾</strong>：三亚湾、大东海、亚龙湾、海棠湾。<ul id="1946773b-a7ed-8066-bbc7-ec0e370402cf" class="bulleted-list"><li style="list-style-type:circle"><strong>三亚湾</strong>：日落最美，<mark class="highlight-purple">适合看日落和吃海鲜，沙滩质量一般。</mark></li></ul><ul id="1946773b-a7ed-807c-b50a-e66de57b90ba" class="bulleted-list"><li style="list-style-type:circle"><strong>亚龙湾</strong>：沙滩质量最好，<mark class="highlight-purple">适合游泳，但人多。</mark></li></ul><ul id="1946773b-a7ed-809e-a614-f7698d7f2191" class="bulleted-list"><li style="list-style-type:circle"><strong>海棠湾</strong>：最安静，适合亲子度假，但距离市区较远。</li></ul></li></ul><ul id="1946773b-a7ed-8084-9711-d45afd6997eb" class="bulleted-list"><li style="list-style-type:disc"><strong>三大海岛</strong>：蜈支洲岛、分界洲岛、西岛。<ul id="1946773b-a7ed-8051-8a84-c2cef854e521" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-default"><strong>蜈支洲岛</strong></mark><mark class="highlight-default">：</mark><mark class="highlight-purple">海水和沙滩最美，适合拍照，但海上项目较贵。</mark></li></ul><ul id="1946773b-a7ed-8049-8169-dfd5d1a9b1ac" class="bulleted-list"><li style="list-style-type:circle"><strong>加井岛</strong>：海底<mark class="highlight-purple">珊瑚丰富</mark>，适合<mark class="highlight-purple">浮潜和深潜</mark>，性价比高。</li></ul></li></ul><ul id="1946773b-a7ed-80cd-95d4-ecf2a15d5699" class="bulleted-list"><li style="list-style-type:disc"><strong>私人岛屿</strong>：如加井岛，适合野营和浮潜。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80ae-99bf-c3d7127b224d" class="numbered-list" start="2"><li><strong>热带雨林</strong>：<ul id="1946773b-a7ed-80a1-b743-e7604235db1a" class="bulleted-list"><li style="list-style-type:disc"><strong>亚龙湾鸟巢热带天堂森林公园</strong>：可俯瞰亚龙湾，适合情侣和摄影爱好者。</li></ul><ul id="1946773b-a7ed-8008-8215-eaee85842760" class="bulleted-list"><li style="list-style-type:disc"><strong>槟榔谷</strong>：结合了热带雨林和黎族、苗族文化，适合体验民俗文化。</li></ul><ul id="1946773b-a7ed-8002-a702-c5a6e866fdba" class="bulleted-list"><li style="list-style-type:disc"><strong>呀诺达</strong>：以壮阔的山景为主，但相对单调。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80d2-a8b3-e02a5123e295" class="numbered-list" start="3"><li><strong>打卡景点</strong>：<ul id="1946773b-a7ed-8038-95d2-cdbbfab29652" class="bulleted-list"><li style="list-style-type:disc"><strong>天涯海角</strong>：有象征意义，适合拍照打卡。</li></ul><ul id="1946773b-a7ed-804d-bcf0-d0919e8508ca" class="bulleted-list"><li style="list-style-type:disc"><strong>鹿回头公园</strong>：夕阳和夜景很漂亮，适合摄影。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-802f-b2ee-de8d6027c3c5" class="numbered-list" start="4"><li><strong>人文景点</strong>：<ul id="1946773b-a7ed-806f-ad9c-dd7a314fb769" class="bulleted-list"><li style="list-style-type:disc"><strong>三亚千古情</strong>：大型演出，结合了崖州古城，适合亲子游。</li></ul><ul id="1946773b-a7ed-8042-bf98-c403082c6966" class="bulleted-list"><li style="list-style-type:disc"><strong>南山大小洞天</strong>：佛教和道教文化景点，南海观音像壮观。</li></ul></li></ol><h3 id="1946773b-a7ed-8026-873f-e07f848fa5cd" class=""><strong>二、推荐景点及攻略</strong></h3><ol type="1" id="1946773b-a7ed-8012-b4c8-cd5faa3ec6fb" class="numbered-list" start="1"><li><strong>三亚湾椰梦长廊</strong>：<ul id="1946773b-a7ed-805d-b9dc-e7bb8839c0f1" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：免费，日落时间17:30-18:30，适合看日落和吃海鲜。</li></ul><ul id="1946773b-a7ed-80d1-b383-e2015d32167a" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：傍晚前往，欣赏日落，之后去大排档品尝海鲜。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8009-92a9-cc2b7451d875" class="numbered-list" start="2"><li><strong>蜈支洲岛</strong>：<ul id="1946773b-a7ed-8010-8ce9-fe4ed2122f58" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：海水和沙滩质量高，适合拍照和游泳。</li></ul><ul id="1946773b-a7ed-805d-8b8b-e63e13101330" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：建议游玩4小时，避开岛上的高价海上项目，推荐去加井岛潜水。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80a7-a787-edb627f80d07" class="numbered-list" start="3"><li><strong>加井岛</strong>：<ul id="1946773b-a7ed-806a-81b0-f22182d5a468" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：海底珊瑚丰富，适合浮潜和深潜。</li></ul><ul id="1946773b-a7ed-80de-a08b-dc192e37976a" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：参加户外俱乐部的一日游，体验浮潜、烧烤、海钓等活动。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-806b-8a32-f18994caae87" class="numbered-list" start="4"><li><strong>亚龙湾鸟巢热带天堂森林公园</strong>：<ul id="1946773b-a7ed-803b-b396-e3ab55da90ee" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：可俯瞰亚龙湾，适合情侣和摄影爱好者。</li></ul><ul id="1946773b-a7ed-809e-949a-edd3485f152e" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：门票+电瓶车135元，建议游玩3小时，重点参观山顶观景台和《非诚勿扰2》拍摄地。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-807d-bcfa-cce9c9ca876d" class="numbered-list" start="5"><li><strong>槟榔谷</strong>：<ul id="1946773b-a7ed-8044-9465-fc3b3b44377b" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：结合了热带雨林和黎族、苗族文化。</li></ul><ul id="1946773b-a7ed-8089-9285-c53465e86457" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：门票+电瓶车120元，建议游玩3小时，观看《槟榔·古韵》表演。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80e2-8f18-c08d6f8da9bf" class="numbered-list" start="6"><li><strong>鹿回头公园</strong>：<ul id="1946773b-a7ed-80b3-93a8-fcf4513274e3" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：夕阳和夜景漂亮，适合摄影。</li></ul><ul id="1946773b-a7ed-8069-9fae-dda65ae59466" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：门票36元，建议傍晚前往，欣赏夕阳和夜景。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8000-842a-cbf333ce8b19" class="numbered-list" start="7"><li><strong>天涯海角</strong>：<ul id="1946773b-a7ed-8038-b0f9-fb217b0ddc8b" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：有象征意义，适合打卡拍照。</li></ul><ul id="1946773b-a7ed-80a5-a7b6-c0b11fa4365c" class="bulleted-list"><li style="list-style-type:disc"><strong>攻略</strong>：门票90元，游玩时间1.5小时，重点打卡“天涯”“海角”等标志性景观。</li></ul></li></ol><h3 id="1946773b-a7ed-8065-9e0e-f29d278188bb" class=""><strong>三、实用建议</strong></h3><ol type="1" id="1946773b-a7ed-8042-b57d-cb6d06a88078" class="numbered-list" start="1"><li><strong>购票</strong>：建议在马蜂窝等平台提前购买门票，比现场便宜。</li></ol><ol type="1" id="1946773b-a7ed-80ef-a602-c1eb3f9f3c40" class="numbered-list" start="2"><li><strong>游玩时间</strong>：合理安排行程，避免在景区内浪费时间。</li></ol><ol type="1" id="1946773b-a7ed-8005-96c8-d895e060fb27" class="numbered-list" start="3"><li><strong>交通</strong>：三亚各景点之间距离较远，建议租车或包车，方便自由安排行程。</li></ol><ol type="1" id="1946773b-a7ed-802a-93fb-e0314000991d" class="numbered-list" start="4"><li><strong>餐饮</strong>：避开景区附近的餐厅，选择市区口碑好的餐厅，性价比更高。</li></ol><ol type="1" id="1946773b-a7ed-80ec-be36-edc652b14602" class="numbered-list" start="5"><li><strong>购物</strong>：除了免税店，其他地方购物需谨慎，避免购买高价低质的纪念品。</li></ol></details></li></ul><ul id="1946773b-a7ed-801b-b427-cdc4572270cd" class="block-color-orange_background toggle"><li><details open=""><summary><a href="https://www.mafengwo.cn/gonglve/ziyouxing/308884.html">三亚旅游丨必打卡景点和路线攻略分享‼️（建议收藏） - 马蜂窝</a></summary><h3 id="1946773b-a7ed-808a-8a29-c930cf96f769" class=""><strong>三亚旅游攻略总结</strong></h3><h3 id="1946773b-a7ed-804d-984b-ff364dcc8406" class=""><strong>一、必打卡景点推荐</strong></h3><ol type="1" id="1946773b-a7ed-8001-8e54-c1e11f22a20e" class="numbered-list" start="1"><li><strong>南山文化旅游区</strong><ul id="1946773b-a7ed-8080-9bb2-d07f6f1b8c3f" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：展示中国佛教传统文化，108米海上观音是亮点，还有千手观音、财神等景点。</li></ul><ul id="1946773b-a7ed-80fb-819d-cca3a36f5f2f" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市崖州区南山文化旅游区</li></ul><ul id="1946773b-a7ed-805d-b363-db45cc0eb6f1" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩时间</strong>：约4小时</li></ul><ul id="1946773b-a7ed-8033-840e-e8dc8224897a" class="bulleted-list"><li style="list-style-type:disc"><strong>票价</strong>：113元</li></ul></li></ol><ol type="1" id="1946773b-a7ed-805b-93d9-cbac8779e09f" class="numbered-list" start="2"><li><strong>亚特兰蒂斯</strong><ul id="1946773b-a7ed-8050-bcb4-ff547e1de448" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：对标迪拜的亚特兰蒂斯，有水族馆、水上世界、海底主题度假酒店等，适合亲子游。</li></ul><ul id="1946773b-a7ed-808c-b992-fc9bba08a54e" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市吉阳区亚龙湾国家旅游度假区</li></ul><ul id="1946773b-a7ed-8047-bb9c-f527ada9ecc7" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩时间</strong>：水族馆约2小时，加上水上世界约6小时</li></ul><ul id="1946773b-a7ed-805d-a5bc-dae0bf31fb86" class="bulleted-list"><li style="list-style-type:disc"><strong>票价</strong>：水族馆成人票188元，水世界和水族馆473元</li></ul></li></ol><ol type="1" id="1946773b-a7ed-808a-9460-de70f57121f9" class="numbered-list" start="3"><li><strong>蜈支洲岛</strong><ul id="1946773b-a7ed-8033-9cd5-d45574d6d35d" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：阳光明媚、沙滩细软、海水碧绿，是国际标准潜水训练基地，娱乐项目丰富。</li></ul><ul id="1946773b-a7ed-800d-83b8-fe97f7b58731" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠区林旺镇后海村</li></ul><ul id="1946773b-a7ed-802b-90ff-d8bf2e7136aa" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩时间</strong>：约1天</li></ul><ul id="1946773b-a7ed-80b9-beed-dfda065eb3b5" class="bulleted-list"><li style="list-style-type:disc"><strong>票价</strong>：门票+往返船票144元</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8026-9e7c-ebc967e3d359" class="numbered-list" start="4"><li><strong>亚龙湾热带天堂森林公园</strong><ul id="1946773b-a7ed-809c-9e45-fc4b31794f7c" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：《非诚勿扰2》拍摄地，可鸟瞰亚龙湾，有玻璃栈道和雨林探险项目。</li></ul><ul id="1946773b-a7ed-80a9-902b-cc86abf0dec3" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：亚龙湾国家旅游度假区</li></ul><ul id="1946773b-a7ed-80b3-a05f-d6e154ee22a1" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩时间</strong>：约4小时</li></ul><ul id="1946773b-a7ed-806c-bbda-facd848da6ff" class="bulleted-list"><li style="list-style-type:disc"><strong>票价</strong>：包含玻璃栈道约250元</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80d7-86f4-cf8e657617ca" class="numbered-list" start="5"><li><strong>三亚宋城千古情</strong><ul id="1946773b-a7ed-80d9-af30-f1323928d285" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：黎苗古城，有彩色动物园、科技游乐馆、黎村、苗寨等，演出精彩。</li></ul><ul id="1946773b-a7ed-8015-871c-e2a32f00a479" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市吉阳区迎宾路333号</li></ul><ul id="1946773b-a7ed-80ee-9656-cd7e95049431" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩时间</strong>：约4小时</li></ul><ul id="1946773b-a7ed-8014-9dfc-fb00ee7543a0" class="bulleted-list"><li style="list-style-type:disc"><strong>票价</strong>：300元</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8078-a071-ede701445f68" class="numbered-list" start="6"><li><strong>三亚国际免税城</strong><ul id="1946773b-a7ed-80db-892d-d539b166938b" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐理由</strong>：亚洲最大的单体免税店，集购物、餐饮、娱乐于一体，购物体验好。</li></ul><ul id="1946773b-a7ed-80fa-a235-e41a26daea9d" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠区海棠北路118号</li></ul><ul id="1946773b-a7ed-802b-8315-e368e76e7d81" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：化妆品套装、容量越大越划算，口红、水乳精华等价格优惠。</li></ul></li></ol><h3 id="1946773b-a7ed-80d0-a7ad-fd6dc8750405" class=""><strong>二、五日经典行程推荐</strong></h3><p id="1946773b-a7ed-806e-8533-cbb7ced2308a" class=""><strong>Day 1：海棠湾</strong></p><ul id="1946773b-a7ed-80df-b2e4-e477fa8ce1f7" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩</strong>：蜈支洲岛（全天游玩）</li></ul><ul id="1946773b-a7ed-8058-8d55-f2d9cb6a057a" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿</strong>：海棠湾（主题民宿或豪华度假酒店）</li></ul><ul id="1946773b-a7ed-808b-bd75-f8e716f72d71" class="bulleted-list"><li style="list-style-type:disc"><strong>饮食</strong>：海棠湾万达广场，内有影城和各类美食。</li></ul><p id="1946773b-a7ed-805f-a171-f039600964db" class=""><strong>Day 2：海棠湾</strong></p><ul id="1946773b-a7ed-80f0-8542-db6e2144b19a" class="bulleted-list"><li style="list-style-type:disc"><strong>上午</strong>：亚特兰蒂斯（水族馆和水上世界）</li></ul><ul id="1946773b-a7ed-8050-a677-d139d0c4d550" class="bulleted-list"><li style="list-style-type:disc"><strong>下午</strong>：三亚国际免税城</li></ul><ul id="1946773b-a7ed-8051-85ed-cb48dce19a80" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿</strong>：海棠湾</li></ul><ul id="1946773b-a7ed-805b-9f8a-e2aabf0ddee7" class="bulleted-list"><li style="list-style-type:disc"><strong>饮食</strong>：海棠湾本地特色菜餐厅，亚特兰蒂斯内国际米其林级别餐厅。</li></ul><p id="1946773b-a7ed-8097-aef3-cc593eb09343" class=""><strong>Day 3：亚龙湾</strong></p><ul id="1946773b-a7ed-803c-9bb2-f045e8c9271b" class="bulleted-list"><li style="list-style-type:disc"><strong>上午</strong>：热带天堂森林公园</li></ul><ul id="1946773b-a7ed-80a3-952d-c396447fff91" class="bulleted-list"><li style="list-style-type:disc"><strong>下午</strong>：三亚宋城千古情</li></ul><ul id="1946773b-a7ed-8030-b216-f49cdc9d6e1c" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿</strong>：三亚湾红树林度假区（亲子特色，综合商超）</li></ul><ul id="1946773b-a7ed-8023-a00f-e8b39bbde3f1" class="bulleted-list"><li style="list-style-type:disc"><strong>饮食</strong>：嗲嗲椰子鸡（正宗椰子鸡餐厅）</li></ul><p id="1946773b-a7ed-80be-b8ca-d18b78fa56d1" class=""><strong>Day 4：三亚市区</strong></p><ul id="1946773b-a7ed-8098-8b6c-d0db73075f45" class="bulleted-list"><li style="list-style-type:disc"><strong>游玩</strong>：市区内小景点（椰梦长廊、鹿回头、大东海）</li></ul><ul id="1946773b-a7ed-80aa-8d35-c04386c770e4" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿</strong>：三亚湾丽禾温德姆酒店（综合配套设施齐全）</li></ul><ul id="1946773b-a7ed-806f-9aa9-dd670be86372" class="bulleted-list"><li style="list-style-type:disc"><strong>饮食</strong>：群众街小吃、火车头广场海鲜、酒吧一条街（推荐隐醉爵士乐酒吧）</li></ul><p id="1946773b-a7ed-8045-a112-c2352b93972d" class=""><strong>Day 5：南山</strong></p><ul id="1946773b-a7ed-8034-abc9-c1a21412e2f3" class="bulleted-list"><li style="list-style-type:disc"><strong>上午</strong>：南山文化旅游区</li></ul><ul id="1946773b-a7ed-80cb-a528-d1dc8519c231" class="bulleted-list"><li style="list-style-type:disc"><strong>下午</strong>：天涯海角或大小洞天（选择一个）</li></ul><ul id="1946773b-a7ed-8062-97e5-dd2d8ffbc0e6" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿</strong>：丽禾温德姆酒店（继续入住）</li></ul><ul id="1946773b-a7ed-80a8-9baf-d57f356d2eea" class="bulleted-list"><li style="list-style-type:disc"><strong>饮食</strong>：南山景区斋饭，丽禾温德姆酒店豪华海鲜烧烤自助（人均168元）</li></ul><h3 id="1946773b-a7ed-805e-93ce-cbb4c24746a6" class=""><strong>三、其他建议</strong></h3><ol type="1" id="1946773b-a7ed-805e-b8a0-eb7bb201c1bd" class="numbered-list" start="1"><li><strong>购买套餐</strong>：建议购买当地几日游套餐，吃喝玩乐一网打尽。</li></ol><ol type="1" id="1946773b-a7ed-807a-9906-f2727c147423" class="numbered-list" start="2"><li><strong>防晒防蚊</strong>：提前备好防晒防蚊用品。</li></ol><ol type="1" id="1946773b-a7ed-8016-968a-d15ae0488678" class="numbered-list" start="3"><li><strong>体验海岛项目</strong>：推荐体验海岛项目，如潜水、浮潜等，提前关注当地气候。</li></ol></details></li></ul><ul id="1946773b-a7ed-8088-b250-f56f0cc6dd33" class="block-color-orange_background toggle"><li><details open=""><summary><a href="https://www.mafengwo.cn/gonglve/ziyouxing/413390.html">三亚旅游攻略—超详细12月-2月三亚旅游干货 - 马蜂窝</a></summary><p id="1946773b-a7ed-8039-9b4a-d6cfd6c6c417" class="">
+</p><figure id="1946773b-a7ed-8081-b825-e322da82e3b9" class="image"><a href="https://note.mafengwo.net/img/b6/8c/7b3d3291006a79a9d02cecd5a45c9f66.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/b6/8c/7b3d3291006a79a9d02cecd5a45c9f66.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-8025-934b-c32ff8b00ee1" class="image"><a href="https://note.mafengwo.net/img/2b/65/91355b62f9b475e6236711c30a87de86.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/2b/65/91355b62f9b475e6236711c30a87de86.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-80ae-bb58-eb3626416b23" class="image"><a href="https://note.mafengwo.net/img/e1/60/31f15281138bf907d4e506a835154277.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/e1/60/31f15281138bf907d4e506a835154277.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-80a3-99fa-e38fa2fdbf6d" class="image"><a href="https://note.mafengwo.net/img/29/e0/1b9312032d3493ae10ac69ddfef00899.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/29/e0/1b9312032d3493ae10ac69ddfef00899.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-80ae-9cbc-d24fcbec5b07" class="image"><a href="https://note.mafengwo.net/img/11/bc/dbb11fd5af7e7dc0f9068ed7c1b5ea1f.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/11/bc/dbb11fd5af7e7dc0f9068ed7c1b5ea1f.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-8077-bb83-fe4a172aed4f" class="image"><a href="https://note.mafengwo.net/img/f8/42/6c8f4994c4e832e901d700dc9873aed7.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/f8/42/6c8f4994c4e832e901d700dc9873aed7.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><figure id="1946773b-a7ed-802f-8c7b-fecf7d74174f" class="image"><a href="https://note.mafengwo.net/img/be/62/ded5068aacf210bb04635f35e45c7a16.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"><img src="https://note.mafengwo.net/img/be/62/ded5068aacf210bb04635f35e45c7a16.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90"/></a></figure><p id="1946773b-a7ed-8059-babd-ee925bcf2d87" class="">
+</p></details></li></ul><ul id="1946773b-a7ed-8041-be54-e8d43124a3e7" class="block-color-teal_background bulleted-list"><li style="list-style-type:disc"><a href="https://www.visitsanya.com/">三亚市旅游发展局</a></li></ul><ul id="1946773b-a7ed-8086-8b0b-e2926d184448" class="block-color-brown_background bulleted-list"><li style="list-style-type:disc"><a href="https://www.tripadvisor.cn/Attractions-g297427-Activities-Sanya-Hainan.html">2025年2月三亚景点攻略-三亚旅游必去景点-三亚景点大全-猫途鹰</a></li></ul><p id="1946773b-a7ed-803c-ad0f-eb0e0e6e3886" class="">
+</p><ul id="1946773b-a7ed-809e-a072-ec399f2e19cc" class="block-color-blue_background toggle"><li><details open=""><summary><a href="https://www.extrabux.cn/chs/guide/7932383">2025最全三亚免税店购物攻略（免税店推荐+位置+品牌大全+必买推荐+预约+支付方式） - Extrabux</a></summary><h3 id="1946773b-a7ed-80df-aae1-f2e21ffdfb78" class=""><strong>三亚免税店购物攻略</strong></h3><h3 id="1946773b-a7ed-808f-ab94-ebf2cfb5ac85" class=""><strong>1. 三亚国际免税城</strong></h3><ul id="1946773b-a7ed-800c-b1d6-f5ac02907846" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠区海棠北路118号</li></ul><ul id="1946773b-a7ed-8005-a53c-c0f34844c92e" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-80cd-be96-c7c2669b381c" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：汇聚了近300个国际知名品牌，包括香奈儿、兰蔻、迪奥等。</li></ul><ul id="1946773b-a7ed-802e-8875-cc1524aaecc3" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：<ul id="1946773b-a7ed-80ca-b12b-cf73b3153c6e" class="bulleted-list"><li style="list-style-type:circle"><strong>购买方式</strong>：可选择线下实体店购买或通过cdf离岛免税APP线上购买。</li></ul><ul id="1946773b-a7ed-80a4-bda6-fbc264dbeef4" class="bulleted-list"><li style="list-style-type:circle"><strong>会员制度</strong>：注册会员购物可积分，积分可抵现。生日月购物享双倍积分。</li></ul><ul id="1946773b-a7ed-80c4-920f-dabb7acfa7b4" class="bulleted-list"><li style="list-style-type:circle"><strong>提货方式</strong>：可选择机场提货、邮寄送达或“即购即提”。</li></ul></li></ul><h3 id="1946773b-a7ed-80f3-ad22-fba2387fe36b" class=""><strong>2. 三亚凤凰机场免税店</strong></h3><ul id="1946773b-a7ed-80d5-b387-ddaa771a674e" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚凤凰机场T1航站楼西扩（208-206登机口旁）</li></ul><ul id="1946773b-a7ed-80d2-ba6f-dbae7ab321da" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：05:30-23:00</li></ul><ul id="1946773b-a7ed-80e7-a943-f04ad7cb3632" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：包括雅诗兰黛、迪奥、兰蔻等。</li></ul><ul id="1946773b-a7ed-80cc-a70c-c199551c3d25" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：适合离岛前“查漏补缺”，品类齐全且提货便捷。</li></ul><h3 id="1946773b-a7ed-8021-aa00-dd3165338527" class=""><strong>3. 三亚海旅免税城</strong></h3><ul id="1946773b-a7ed-804e-8224-f1a10acc2da8" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市吉阳区迎宾路303号</li></ul><ul id="1946773b-a7ed-807c-a2fa-c2b62d71ac34" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-805c-afee-f175d545e0b1" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：包括Tasaki、Marni等170多个品牌。</li></ul><ul id="1946773b-a7ed-8094-b614-ef6a1d32b1b8" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：电子产品折扣多，适合购买苹果等数码产品。</li></ul><h3 id="1946773b-a7ed-8086-bfb8-fadb64681ba2" class=""><strong>4. 三亚国际免税购物公园</strong></h3><ul id="1946773b-a7ed-809b-bd7e-f3e0f701aaa8" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市天涯区解放一路16号</li></ul><ul id="1946773b-a7ed-8002-a811-ee212bf42cc5" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-23:00</li></ul><ul id="1946773b-a7ed-801f-b3ff-eeaf90197482" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：包括三星、索尼等电子产品，以及健康食品和医疗器械。</li></ul><ul id="1946773b-a7ed-8086-aa84-c55b30be99d7" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：大健康生活馆是特色，适合购买保健品和医疗器械。</li></ul></details></li></ul><ul id="1946773b-a7ed-80f1-9899-f660117504d7" class="block-color-blue_background toggle"><li><details open=""><summary><a href="https://post.smzdm.com/p/a0qrg8qr/">三亚免税店全攻略，看完至少省下20%-30%__什么值得买</a></summary><h3 id="1946773b-a7ed-8049-b76a-ce871ca2a9ef" class=""><strong>三亚免税店全攻略</strong></h3><h3 id="1946773b-a7ed-8079-a530-f1c3a63974cd" class=""><strong>一、海南免税店购物基础知识</strong></h3><ol type="1" id="1946773b-a7ed-8052-9d1e-f25a6f0b627c" class="numbered-list" start="1"><li><strong>购买资格</strong>：<ul id="1946773b-a7ed-801f-96ce-ed83497b2564" class="bulleted-list"><li style="list-style-type:disc">年满16周岁，已购买离岛机票、火车票、船票，并持有效身份证件（国内旅客持居民身份证）。</li></ul><ul id="1946773b-a7ed-8006-8605-f2b3c8c43feb" class="bulleted-list"><li style="list-style-type:disc">关键词：已购离岛票、身份证、离岛不离境、国内游客。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-800f-b1fd-cddbfa750d86" class="numbered-list" start="2"><li><strong>免税购物额度</strong>：<ul id="1946773b-a7ed-8093-ab8e-ec9e5b3b0fd9" class="bulleted-list"><li style="list-style-type:disc">每年每人免税购物额度为10万元人民币，不限次数。</li></ul><ul id="1946773b-a7ed-8084-8a84-e33afadae6a5" class="bulleted-list"><li style="list-style-type:disc">可通过“cdf海南免税”APP查询剩余额度。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8094-8235-ee824b588df9" class="numbered-list" start="3"><li><strong>单次限购</strong>：<ul id="1946773b-a7ed-8018-8db9-ff5c0daf3f9a" class="bulleted-list"><li style="list-style-type:disc">化妆品30件，手机4件，酒类1500ml，其他品类不限件数。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80e0-92ba-ee08d7a83f20" class="numbered-list" start="4"><li><strong>海南岛免税店分布</strong>：<ul id="1946773b-a7ed-800a-974b-e9db1186bee4" class="bulleted-list"><li style="list-style-type:disc">三亚（4家）、海口（4家）、博鳌（1家）。</li></ul><ul id="1946773b-a7ed-8066-b103-d45a81b40cef" class="bulleted-list"><li style="list-style-type:disc">中免（cdf）是海南免税市场的主要运营商。</li></ul></li></ol><h3 id="1946773b-a7ed-80ca-900b-ead64e5ef9f0" class=""><strong>二、三亚免税店推荐</strong></h3><ol type="1" id="1946773b-a7ed-800f-ac9d-d1a3c10376cc" class="numbered-list" start="1"><li><strong>三亚国际免税城</strong>：<ul id="1946773b-a7ed-80f5-9b73-f7b232a8f2cf" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠区海棠北路118号</li></ul><ul id="1946773b-a7ed-8093-82d2-e7a78b7ba14a" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-8017-a996-cfd08521d736" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：香奈儿、兰蔻、迪奥等国际大牌。</li></ul><ul id="1946773b-a7ed-8048-8602-d37d12bf8ab4" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：<ul id="1946773b-a7ed-80bf-b6b6-e1cafcc86aa2" class="bulleted-list"><li style="list-style-type:circle"><strong>注册会员</strong>：通过“cdf海南免税”APP注册会员，享受积分返现。</li></ul><ul id="1946773b-a7ed-803f-833f-f850a055f7dc" class="bulleted-list"><li style="list-style-type:circle"><strong>领取优惠券</strong>：通过支付宝、微信、APP等领取优惠券。</li></ul><ul id="1946773b-a7ed-80b1-9364-ca47dd3a941f" class="bulleted-list"><li style="list-style-type:circle"><strong>酒店优惠</strong>：部分酒店提供95折优惠券，需提前一天预约。</li></ul><ul id="1946773b-a7ed-806d-a290-f8628c0730f8" class="bulleted-list"><li style="list-style-type:circle"><strong>信用卡优惠</strong>：使用中信、民生、中国银行、建行等信用卡享受额外折扣。</li></ul><ul id="1946773b-a7ed-8021-bc66-ea4c4b795cd4" class="bulleted-list"><li style="list-style-type:circle"><strong>购物时间</strong>：建议每天10点开门时准时到达，货品最全、人最少。</li></ul></li></ul></li></ol><ol type="1" id="1946773b-a7ed-80d9-892a-f46703c2712c" class="numbered-list" start="2"><li><strong>三亚凤凰机场免税店</strong>：<ul id="1946773b-a7ed-808e-95bf-e4815431ec25" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚凤凰机场T1航站楼西扩（208-206登机口旁）</li></ul><ul id="1946773b-a7ed-802c-8a35-f790b9e646c3" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：05:30-23:00</li></ul><ul id="1946773b-a7ed-804b-849c-c8206f693559" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：雅诗兰黛、迪奥、兰蔻等。</li></ul><ul id="1946773b-a7ed-80bc-9154-f946f4f88874" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：适合离岛前“查漏补缺”，品类齐全且提货便捷。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80e9-8133-c04d3f451633" class="numbered-list" start="3"><li><strong>三亚海旅免税城</strong>：<ul id="1946773b-a7ed-8009-84c7-d08742b3c0d9" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市吉阳区迎宾路303号</li></ul><ul id="1946773b-a7ed-80c9-a248-c03db4b8cb42" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-80ee-9976-d63f74345dbe" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：Tasaki、Marni等170多个品牌。</li></ul><ul id="1946773b-a7ed-8069-ad23-c2cf50d2855c" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：电子产品折扣多，适合购买苹果等数码产品。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8023-9da4-c6d8cec802d9" class="numbered-list" start="4"><li><strong>三亚国际免税购物公园</strong>：<ul id="1946773b-a7ed-8041-bcb3-e0880d0e9917" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市天涯区解放一路16号</li></ul><ul id="1946773b-a7ed-8075-b3f0-f79bfa82010a" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-23:00</li></ul><ul id="1946773b-a7ed-80f9-8635-f4cf33cbdfba" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：三星、索尼等电子产品，以及健康食品和医疗器械。</li></ul><ul id="1946773b-a7ed-80a3-8335-fa386fd7dc8e" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：大健康生活馆是特色，适合购买保健品和医疗器械。</li></ul></li></ol><h3 id="1946773b-a7ed-8033-ab59-d333ad7535d0" class=""><strong>三、提货方式</strong></h3><ol type="1" id="1946773b-a7ed-8062-b003-f8a696ab7c14" class="numbered-list" start="1"><li><strong>自提</strong>：<ul id="1946773b-a7ed-8087-b655-f04b4262f511" class="bulleted-list"><li style="list-style-type:disc">提货需要准备：身份证、登机牌，线下买单的货品还需要小票。</li></ul><ul id="1946773b-a7ed-800d-95ae-d3922aa8b138" class="bulleted-list"><li style="list-style-type:disc">提货地点：三亚国际免税城、海口美兰机场免税店、琼海博鳌免税店、cdf海口日月广场免税店。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80a1-b280-c7e1b546ee18" class="numbered-list" start="2"><li><strong>邮寄</strong>：<ul id="1946773b-a7ed-8009-9b4d-de866b53f135" class="bulleted-list"><li style="list-style-type:disc">适合不紧急的商品，免税店承担邮寄费用。</li></ul><ul id="1946773b-a7ed-80ee-b52c-f62c8d5f494d" class="bulleted-list"><li style="list-style-type:disc">线下订单在买单时告知工作人员，线上订单选择“邮寄”提货方式。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80cd-82d4-d61eb530779d" class="numbered-list" start="3"><li><strong>即购即提</strong>：<ul id="1946773b-a7ed-8054-8e56-d44e9b58183f" class="bulleted-list"><li style="list-style-type:disc">买完直接带走，在机场办理退税，操作较麻烦。</li></ul></li></ol><h3 id="1946773b-a7ed-80e8-b47c-def0b35bf95d" class=""><strong>四、CDF离岛补购商城</strong></h3><ul id="1946773b-a7ed-8040-ad2c-dfb788a0b85a" class="bulleted-list"><li style="list-style-type:disc">离岛回来180天内可再次购买，直邮到家，不限购，但不可以用积分。</li></ul><ul id="1946773b-a7ed-805e-81b2-cefea5d15d77" class="bulleted-list"><li style="list-style-type:disc">离岛补购网上商城地址：<a href="http://fg.cdfgsanya.com/">CDF离岛补购商城</a></li></ul><ul id="1946773b-a7ed-80ad-aacc-fae7bf9cb009" class="bulleted-list"><li style="list-style-type:disc">微信小程序购买免税品认准“cdf海南免税”。</li></ul><h3 id="1946773b-a7ed-8026-8b34-ed60e6fc6119" class=""><strong>五、购物技巧</strong></h3><ol type="1" id="1946773b-a7ed-803b-a16b-f843460207a7" class="numbered-list" start="1"><li><strong>关注官方动态</strong>：免税店官网、官方微博和微信，获取最新促销活动信息。</li></ol><ol type="1" id="1946773b-a7ed-80ce-9590-ed7ce60d52dc" class="numbered-list" start="2"><li><strong>把握购物时间</strong>：建议10点开门前准时到达，或在饭点和下午5点团客撤离后前往。</li></ol><ol type="1" id="1946773b-a7ed-8043-8382-f29f44838f82" class="numbered-list" start="3"><li><strong>办理会员卡</strong>：凭身份证件免费办理会员卡，享受积分抵现和生日月双倍积分。</li></ol><ol type="1" id="1946773b-a7ed-8095-8041-d4e123b86da2" class="numbered-list" start="4"><li><strong>选择套装</strong>：套装性价比高，占用额度少，建议多询问营业员是否有套装。</li></ol></details></li></ul><ul id="1946773b-a7ed-80b8-9e62-caa176d7487f" class="block-color-teal_background bulleted-list"><li style="list-style-type:disc"><a href="https://haikou.bendibao.com/news/20241225/70813.shtm">CNSC国药中服免税三亚店线上商城是哪个（附入口）- 海口本地宝</a></li></ul><p id="1946773b-a7ed-805d-9e0b-f64e64cd7f01" class="">
+</p><ul id="1946773b-a7ed-80e2-83f2-d54ff5f37d28" class="block-color-pink_background toggle"><li><details open=""><summary><a href="https://www.maigoo.com/top/421762.html">三亚十大特色美食 三亚必吃的特色美食有哪些 没吃过等于白来→MAIGOO生活榜</a></summary><figure id="1946773b-a7ed-8017-b8d2-e0cc66e8d392" class="image"><a href="image.png"><img style="width:681.984375px" src="image.png"/></a></figure></details></li></ul><ul id="1946773b-a7ed-809a-84ae-e166bab5b86f" class="block-color-teal_background bulleted-list"><li style="list-style-type:disc"><a href="https://www.visitsanya.com/eat.php?class_id=104101">三亚十大名菜_当地特色美食_食在三亚_三亚市旅游发展局</a></li></ul><ul id="1946773b-a7ed-806b-a6fe-d4ef6db87c4b" class="block-color-pink_background toggle"><li><details open=""><summary><a href="https://post.smzdm.com/p/axo64d39/">三亚美食大探索：从海鲜到地道小吃，一站式吃遍全城！_小吃快餐_什么值得买</a></summary><h3 id="1946773b-a7ed-8068-87f6-c722320a76df" class=""><strong>三亚美食大探索</strong></h3><h3 id="1946773b-a7ed-80cd-bc0d-e6a682969264" class=""><strong>一、海鲜大排档</strong></h3><ul id="1946773b-a7ed-809f-b276-e62b01732cc7" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐店铺</strong>：蟹小妹海鲜大排档<ul id="1946773b-a7ed-800d-80cf-f2b39b234358" class="bulleted-list"><li style="list-style-type:circle"><strong>特色菜</strong>：<ul id="1946773b-a7ed-8049-a40f-f85f318f81ef" class="bulleted-list"><li style="list-style-type:square"><strong>香辣蟹</strong>：新鲜海蟹搭配特制酱料，麻辣鲜香。</li></ul><ul id="1946773b-a7ed-802e-8952-e5e94dbe321c" class="bulleted-list"><li style="list-style-type:square"><strong>椒盐皮皮虾</strong>：炸至酥脆，调味恰到好处。</li></ul><ul id="1946773b-a7ed-801e-8d34-d7a3f9bb28ad" class="bulleted-list"><li style="list-style-type:square"><strong>酱爆鱿鱼</strong>：下酒好菜。</li></ul></li></ul></li></ul><ul id="1946773b-a7ed-80b6-a240-fb29b0cb65bf" class="bulleted-list"><li style="list-style-type:disc"><strong>另一推荐</strong>：椰乡小老弟海鲜糟粕醋火锅<ul id="1946773b-a7ed-809a-bdae-ebe0c2c4e9a5" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：文昌鸡与糟粕醋汤底完美融合，海鲜拼盘新鲜。</li></ul></li></ul><h3 id="1946773b-a7ed-80d2-9d43-dd718331f05d" class=""><strong>二、糟粕醋火锅</strong></h3><ul id="1946773b-a7ed-80b5-8789-f6addf65f1e7" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐店铺</strong>：椰乡小老弟<ul id="1946773b-a7ed-80a2-b59e-f066a861546a" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：以糟粕醋为底料，酸辣开胃，文昌鸡肉质鲜嫩。</li></ul></li></ul><h3 id="1946773b-a7ed-809a-bac3-e564659c6b5b" class=""><strong>三、地道海南菜</strong></h3><ul id="1946773b-a7ed-80fd-9194-cf49012843f7" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐店铺</strong>：琼阿妹·文昌鸡簸箕宴<ul id="1946773b-a7ed-8064-bac7-f45be8f6a7db" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：簸箕内盛放多种海南美食，如文昌鸡、海南粉等。</li></ul></li></ul><ul id="1946773b-a7ed-80ea-a005-cac6655794e8" class="bulleted-list"><li style="list-style-type:disc"><strong>另一推荐</strong>：御赐良鸡海南鸡饭<ul id="1946773b-a7ed-80da-a503-e295f08377b1" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：鸡油饭搭配特制高汤，米饭金黄诱人。</li></ul></li></ul><h3 id="1946773b-a7ed-8006-bf79-f33f8c9dc158" class=""><strong>四、小吃夜市</strong></h3><ul id="1946773b-a7ed-807b-ab1c-f822b617cfdf" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐地点</strong>：第一市场夜市和林旺夜市<ul id="1946773b-a7ed-80fb-9128-e8c4490b205a" class="bulleted-list"><li style="list-style-type:circle"><strong>特色小吃</strong>：<ul id="1946773b-a7ed-8054-b6d7-db3678a15f36" class="bulleted-list"><li style="list-style-type:square"><strong>崖城臭豆腐</strong>：外焦里嫩，香味浓郁。</li></ul><ul id="1946773b-a7ed-809a-a484-e22acb7f45fa" class="bulleted-list"><li style="list-style-type:square"><strong>藤桥排骨</strong>：酥脆可口。</li></ul><ul id="1946773b-a7ed-805d-86d6-e7cf5fdba9bb" class="bulleted-list"><li style="list-style-type:square"><strong>君瑞陵水酸粉</strong>：特制酸辣酱，令人欲罢不能。</li></ul></li></ul></li></ul><h3 id="1946773b-a7ed-80c9-ad2f-e2c219a97c1f" class=""><strong>五、美食街区</strong></h3><ul id="1946773b-a7ed-8032-906b-efe968befedd" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐地点</strong>：海棠68环球美食街和天悦城<ul id="1946773b-a7ed-8007-9058-e5329be64ea4" class="bulleted-list"><li style="list-style-type:circle"><strong>特色餐厅</strong>：红沙大排档（海鲜明码标价）和唠婆香草鸭（鸭肉鲜嫩）。</li></ul></li></ul><h3 id="1946773b-a7ed-8020-b5f5-e4ae59ad28c7" class=""><strong>六、伴手礼</strong></h3><ul id="1946773b-a7ed-8043-99e3-c7dc24769d21" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐地点</strong>：第一农贸市场和旺豪超市<ul id="1946773b-a7ed-80f6-8de0-cec3636c838f" class="bulleted-list"><li style="list-style-type:circle"><strong>特色产品</strong>：椰子糖、椰子糕、果脯、海产干货等。</li></ul></li></ul></details></li></ul><ul id="1946773b-a7ed-80cb-a130-cc74c36c1dd3" class="block-color-pink_background toggle"><li><details open=""><summary><a href="https://www.mafengwo.cn/gonglve/ziyouxing/274636.html">三亚美食攻略，资深吃货带你吃遍三亚美食！ - 马蜂窝</a></summary><h3 id="1946773b-a7ed-8047-aa24-eb4fa5e3e854" class=""><strong>三亚美食攻略</strong></h3><h3 id="1946773b-a7ed-8016-9a81-cb7730b6642b" class=""><strong>一、汤粉篇</strong></h3><ol type="1" id="1946773b-a7ed-8044-8582-e4eabc878ae6" class="numbered-list" start="1"><li><strong>抱罗粉</strong><ul id="1946773b-a7ed-8003-a0df-f3ac66ba6cdc" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市月川中路，亿源轩宇酒店对面</li></ul><ul id="1946773b-a7ed-8088-87bd-e9fe82400056" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：汤汁浓郁，配料丰富，海螺汤免费喝。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8054-8fb9-c0a08fd5e98b" class="numbered-list" start="2"><li><strong>后安粉</strong><ul id="1946773b-a7ed-8083-a7c8-f57dd825e34f" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市二中旁边的交通巷</li></ul><ul id="1946773b-a7ed-802a-9705-dbb67536eda8" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：猪骨汤打底，配料有小肠、肥肠、瘦肉、猪肚，鲜美无比。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8070-9d76-ee6b9242a383" class="numbered-list" start="3"><li><strong>陵水酸粉</strong><ul id="1946773b-a7ed-80ed-a5ab-cacd834fb4a3" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚新风街26号</li></ul><ul id="1946773b-a7ed-8003-9373-e7c1730c91ee" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：佐料丰富，添加了沙虫干、鱼饼、小咸鱼、鱿鱼丝等海产品，酸辣甜香。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-806b-823e-d239251ce1f9" class="numbered-list" start="4"><li><strong>港门粉</strong><ul id="1946773b-a7ed-8055-93fe-ce4c777d6aa1" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：明珠对面儋州小区</li></ul><ul id="1946773b-a7ed-80fc-9f6f-fa86aa8ab126" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：螺汤汤底，手打马鲛鱼饼，脆猪皮、碎花生和豆芽。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80d8-9524-f174754bceff" class="numbered-list" start="5"><li><strong>伊面汤</strong><ul id="1946773b-a7ed-800f-be4d-f6292202f731" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市群众街尾申通快递旁边</li></ul><ul id="1946773b-a7ed-8011-af14-f0bebeeda493" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：汤鲜味美，配料丰富，可加粉肠。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80fe-8fed-d4d60d2c721c" class="numbered-list" start="6"><li><strong>炒粉</strong><ul id="1946773b-a7ed-8037-bde4-d15b7c60963c" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市农垦医院对面加油站旁巷子</li></ul><ul id="1946773b-a7ed-80f0-a201-f3384ce22c55" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：粉条裹满酱料，每口都能吃到肉丝和鱿鱼丝。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-807e-88e0-e17469a0eb68" class="numbered-list" start="7"><li><strong>海鸭螺汤粉</strong><ul id="1946773b-a7ed-80bc-9775-f55fbaa536a1" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：金润阳光侧门的好时味旁边</li></ul><ul id="1946773b-a7ed-80d7-9124-cb8def9181cb" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：用料丰富，螺肉、瘦肉、小肠，搭配南瓜花和红心海鸭蛋。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-804d-8e0e-e40058e9bf7e" class="numbered-list" start="8"><li><strong>白灼粉肠</strong><ul id="1946773b-a7ed-800b-81c9-e30d7e1f7569" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市群众街尾申通快递旁边</li></ul><ul id="1946773b-a7ed-8000-ad6c-d1e13a8d5aee" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：瘦肉海螺粉、伊面、猪脚粉、牛腩粉等，白灼粉肠口感鲜美。</li></ul></li></ol><h3 id="1946773b-a7ed-8082-bf38-ef387882f9e8" class=""><strong>二、炒冰篇</strong></h3><ol type="1" id="1946773b-a7ed-80e5-b272-dc6fb6c98099" class="numbered-list" start="1"><li><strong>渔村炒冰</strong><ul id="1946773b-a7ed-8045-b678-ccfe9687a547" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市南边海渔村七巷</li></ul><ul id="1946773b-a7ed-80a1-9701-dba97803ab30" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：水果种类丰富，可混搭，加入鲜果和花生碎，口感细腻。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-801d-9570-e6fe533841ae" class="numbered-list" start="2"><li><strong>姐妹清补凉炒冰</strong><ul id="1946773b-a7ed-80df-93e0-e9b37fd71d7f" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：红旗街84号</li></ul><ul id="1946773b-a7ed-80e7-846b-fcd77c1319af" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：芒果炒冰，香甜绵密，食材新鲜。</li></ul></li></ol><h3 id="1946773b-a7ed-8054-82e4-dea23071d26b" class=""><strong>三、清补凉</strong></h3><ol type="1" id="1946773b-a7ed-801c-ae94-eb8af22167e4" class="numbered-list" start="1"><li><strong>姐妹清补凉</strong><ul id="1946773b-a7ed-8077-8b77-e3a6f88989f0" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市南边海渔村七巷</li></ul><ul id="1946773b-a7ed-80e4-ae4c-f2022ac9646f" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：鲜榨椰奶打底，搭配绿豆、红豆、薏米、西瓜粒等，口感清爽。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-801e-9557-d7cb66e8fa32" class="numbered-list" start="2"><li><strong>传统清补凉</strong><ul id="1946773b-a7ed-80e7-b435-ceed8dea706a" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚河西路金润豪庭侧门糖老铺清补凉</li></ul><ul id="1946773b-a7ed-8015-a18c-de103b8ba134" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：保留传统“糖水清补凉”和“椰子水清补凉”，食材实在。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8067-bf12-e6d037e0e5e8" class="numbered-list" start="3"><li><strong>文昌邓记</strong><ul id="1946773b-a7ed-80da-8297-d03ef5b6055b" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市和平街爆浆虾饼旁边</li></ul><ul id="1946773b-a7ed-8078-b872-c5928f4c29a8" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：冰激凌、糖水、椰奶等多种选择。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80dd-97e4-c48e4b05d56e" class="numbered-list" start="4"><li><strong>炒清补凉</strong><ul id="1946773b-a7ed-80f6-8972-c494667ee443" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市南边海渔村路223号</li></ul><ul id="1946773b-a7ed-808e-802f-ca6a4dcbaa43" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：琼海清补凉，椰奶是椰肉榨的，可加冰沙和冰淇淋球。</li></ul></li></ol><h3 id="1946773b-a7ed-80eb-9c5b-d0e6daf0dcb5" class=""><strong>四、海南特色小吃</strong></h3><ol type="1" id="1946773b-a7ed-80ab-8a7d-d75cf656b71a" class="numbered-list" start="1"><li><strong>群众街杂粮</strong><ul id="1946773b-a7ed-80a2-9572-d396d356acb4" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市群众街中段</li></ul><ul id="1946773b-a7ed-8039-9fe5-ffc823208b78" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：甜汤类丰富，包括芝麻糊、银耳羹、地瓜汤等，还有各种传统小吃。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80d2-b998-ea140d0eeee6" class="numbered-list" start="2"><li><strong>虾饼</strong><ul id="1946773b-a7ed-8023-8ff7-ed3e50e1c591" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市和平街“酱爆虾饼”</li></ul><ul id="1946773b-a7ed-80d9-9d59-df6fec846b9c" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：趁热吃，香气四溢，甜辣酱味道赞。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8091-8575-e1dd21c4a7fb" class="numbered-list" start="3"><li><strong>渔村炸鸡</strong><ul id="1946773b-a7ed-800e-81cc-ca567cc6495e" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：渔村路6巷97号农商银行对面</li></ul><ul id="1946773b-a7ed-803f-95c6-f7ac38c73441" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：炸鸡、酸菜炒粉肠、炸饺、螃蟹粥，营业时间17:40—00:30。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8070-9117-e6263454583a" class="numbered-list" start="4"><li><strong>斑斑斓千层糕</strong><ul id="1946773b-a7ed-80f4-8de2-fc7d8b490e3e" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：商品街7巷10号</li></ul><ul id="1946773b-a7ed-801a-b1d0-d3edb01dc3a9" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：烤椰子糕、黑猪排骨饭、菠萝炒饭、椰子冻等。</li></ul></li></ol><h3 id="1946773b-a7ed-802c-aed9-f011f244b5fd" class=""><strong>五、海南菜</strong></h3><ol type="1" id="1946773b-a7ed-8019-9ad3-f6a921744256" class="numbered-list" start="1"><li><strong>文昌鸡</strong><ul id="1946773b-a7ed-80df-907d-c1888d7511d9" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：海亚餐厅，三亚市新风街138号</li></ul><ul id="1946773b-a7ed-80dc-abd5-e05e965f5c70" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：白切文昌鸡、干煸东山羊、鱼丸汤、虾酱地瓜叶等。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80fb-87ec-cd28846e64df" class="numbered-list" start="2"><li><strong>藤桥排骨</strong><ul id="1946773b-a7ed-807e-9850-d3cbf5660439" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠湾镇藤桥海棠湾农产品批发市场对面</li></ul><ul id="1946773b-a7ed-8039-8e90-d633f32c375a" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：甜而不腻，口感焦香，采用本地土猪排骨。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8036-b6a9-c0d7f2dff466" class="numbered-list" start="3"><li><strong>龙记烤鸭</strong><ul id="1946773b-a7ed-809f-9884-fcfea58bc2db" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：第一市场旁的新民街</li></ul><ul id="1946773b-a7ed-800c-97b4-f0a7990dac14" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：招牌烤鸭25元一斤，文昌鸡、粉肠、猪脚、叉烧等。</li></ul></li></ol><h3 id="1946773b-a7ed-80ce-aea3-f5acc5eed23a" class=""><strong>六、海鲜美食篇</strong></h3><ol type="1" id="1946773b-a7ed-8082-89b5-e76b4059d768" class="numbered-list" start="1"><li><strong>第一市场海鲜</strong><ul id="1946773b-a7ed-80c8-8e80-d5e6df3874f3" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市第一市场</li></ul><ul id="1946773b-a7ed-80ce-a02c-f79b9b601adb" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：海鲜种类丰富，价格实惠，不缺斤少两。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80fd-b182-f61770e214e5" class="numbered-list" start="2"><li><strong>如何挑选海鲜加工店</strong><ul id="1946773b-a7ed-802a-82d4-dd67dfb9f9c9" class="bulleted-list"><li style="list-style-type:disc"><strong>推荐</strong>：小胡子川味海鲜加工店，加工费便宜，味道好，川味海鲜值得一试。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-803c-ae30-ce686dda4653" class="numbered-list" start="3"><li><strong>海鲜吃法推荐</strong><ul id="1946773b-a7ed-80ea-bc86-d901048c7888" class="bulleted-list"><li style="list-style-type:disc"><strong>椒盐皮皮虾</strong>：脆脆的虾壳，椒盐咸香味。</li></ul><ul id="1946773b-a7ed-8077-bf1c-c9f9d361d152" class="bulleted-list"><li style="list-style-type:disc"><strong>清蒸石斑鱼</strong>：鲜美，撒点葱花、红辣椒圈。</li></ul><ul id="1946773b-a7ed-8065-8739-f82044303406" class="bulleted-list"><li style="list-style-type:disc"><strong>蒜蓉粉丝蒸龙虾</strong>：龙虾肉鲜嫩，粉丝吸收鲜味。</li></ul><ul id="1946773b-a7ed-80fb-b7d7-ee54f10d9882" class="bulleted-list"><li style="list-style-type:disc"><strong>蒜蓉粉丝蒸扇贝</strong>：蒜香浓厚，粉丝细软，扇贝肉滑嫩。</li></ul><ul id="1946773b-a7ed-808f-b538-cc059a8400f3" class="bulleted-list"><li style="list-style-type:disc"><strong>辣炒芒果螺</strong>：肉鲜嫩爽口，辣味渗透。</li></ul><ul id="1946773b-a7ed-80b7-89d6-c5d8ddf648f0" class="bulleted-list"><li style="list-style-type:disc"><strong>蒜茸蒸鲍鱼</strong>：软硬适中，鲜嫩味美。</li></ul></li></ol></details></li></ul><p id="1946773b-a7ed-8048-95b8-cb575b0befe1" class="">
+</p><ul id="1946773b-a7ed-800b-9d42-c6a782bff56b" class="block-color-teal toggle"><li><details open=""><summary><strong>综合总结</strong></summary><h3 id="1946773b-a7ed-8010-ab42-d15ba5606da4" class="">三亚旅游全攻略</h3><h3 id="1946773b-a7ed-80fa-81ad-c937f5458318" class="">一、出行前准备</h3><ul id="1946773b-a7ed-8067-8778-d2b401df644d" class="bulleted-list"><li style="list-style-type:disc"><strong>必要证件</strong>：携带身份证、离岛证明等。</li></ul><ul id="1946773b-a7ed-8090-b43f-fc01fc198030" class="bulleted-list"><li style="list-style-type:disc"><strong>免税品购买</strong>：需提前预订回程机票作为凭证。</li></ul><ul id="1946773b-a7ed-80c1-b5d9-dacf359d517d" class="bulleted-list"><li style="list-style-type:disc"><strong>酒店优惠</strong>：部分酒店提供95折优惠和免费接送，但需提前预约。</li></ul><ul id="1946773b-a7ed-80a3-bd3c-de7bb6d4eec5" class="bulleted-list"><li style="list-style-type:disc"><strong>干粮和饮用水</strong>：建议携带以节省开支。</li></ul><h3 id="1946773b-a7ed-800d-bdcd-cdfb3d019607" class="">二、必游景点</h3><ol type="1" id="1946773b-a7ed-804a-a32c-fb59ef229405" class="numbered-list" start="1"><li><strong>天涯海角</strong><ul id="1946773b-a7ed-8050-8498-d61e73553ca8" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：五大名石和南天一柱。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-8027-9b4e-d6036f06b325" class="numbered-list" start="2"><li><strong>大东海</strong><ul id="1946773b-a7ed-8015-a752-ef33703fca69" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：椰梦长廊和菠萝广场。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-802c-b38c-ebfc8aaf7e02" class="numbered-list" start="3"><li><strong>三亚千古情</strong><ul id="1946773b-a7ed-8005-8367-da184661bf0b" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：展现黎苗文化的表演场所。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80dd-b3dd-f0f9986cdfb1" class="numbered-list" start="4"><li><strong>南山寺</strong><ul id="1946773b-a7ed-8091-a659-f73f82580e77" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：108米高的海上观音像。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-80fb-badc-c77c55a2523d" class="numbered-list" start="5"><li><strong>西岛和蜈支洲岛</strong><ul id="1946773b-a7ed-803c-920b-d51d0c517a0c" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：西岛适合骑行拍照，蜈支洲岛适合潜水。</li></ul></li></ol><ol type="1" id="1946773b-a7ed-801d-a659-fe4e39025a41" class="numbered-list" start="6"><li><strong>亚特兰蒂斯水世界</strong><ul id="1946773b-a7ed-8045-b779-ccd15a157380" class="bulleted-list"><li style="list-style-type:disc"><strong>特色</strong>：集酒店和水上乐园于一体。</li></ul></li></ol><h3 id="1946773b-a7ed-8092-b5c2-eea32e321a54" class="">三、交通方式</h3><ul id="1946773b-a7ed-80c4-ba33-c7e415d31a8d" class="bulleted-list"><li style="list-style-type:disc"><strong>飞机</strong>：三亚凤凰国际机场或海口美兰国际机场。</li></ul><ul id="1946773b-a7ed-80a7-a33d-ffdd0d17c0ec" class="bulleted-list"><li style="list-style-type:disc"><strong>火车/高铁</strong>：三亚站、亚龙湾站或凤凰机场站。</li></ul><ul id="1946773b-a7ed-805b-8526-cc6bf7bf5eee" class="bulleted-list"><li style="list-style-type:disc"><strong>自驾</strong>：通过琼州海峡轮渡运送私家车。</li></ul><h3 id="1946773b-a7ed-80c1-8516-cf1ba1a81cab" class="">四、实用建议</h3><ul id="1946773b-a7ed-80eb-9f8d-c63047232c1f" class="bulleted-list"><li style="list-style-type:disc"><strong>旅游旺季</strong>：11月至次年2月，但需注意天气变化。</li></ul><ul id="1946773b-a7ed-8036-a5f7-d0b0d4002096" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿选择</strong>：海棠湾设施好但价格高，大东海地理位置好。</li></ul><ul id="1946773b-a7ed-8030-bf0b-c04f1e0dbb6e" class="bulleted-list"><li style="list-style-type:disc"><strong>参观南山寺</strong>：无需额外购买香烛。</li></ul><ul id="1946773b-a7ed-802f-8d52-e9cab6ea5c0b" class="bulleted-list"><li style="list-style-type:disc"><strong>亚特兰蒂斯酒店</strong>：有免费开放的海洋生物展示区。</li></ul><h3 id="1946773b-a7ed-80ef-a3f4-c4be9c81d042" class="">五、避坑指南</h3><ul id="1946773b-a7ed-808c-8e22-e9a165841603" class="bulleted-list"><li style="list-style-type:disc"><strong>潜水活动</strong>：大东海不适合高端潜水活动。</li></ul><ul id="1946773b-a7ed-8011-8aaf-cf98a893157c" class="bulleted-list"><li style="list-style-type:disc"><strong>交通</strong>：从机场到市区要选择正规出租车。</li></ul><ul id="1946773b-a7ed-80fd-b627-e3c39e5b5cb5" class="bulleted-list"><li style="list-style-type:disc"><strong>防晒</strong>：即使阴天也要做好防护。</li></ul><ul id="1946773b-a7ed-807c-a610-cb08e938f4d7" class="bulleted-list"><li style="list-style-type:disc"><strong>购物</strong>：景区纪念品价格偏高，建议在市区集市购买。</li></ul><ul id="1946773b-a7ed-8056-9c7b-d116e0226479" class="bulleted-list"><li style="list-style-type:disc"><strong>行程安排</strong>：不要过于紧凑。</li></ul><ul id="1946773b-a7ed-808c-9dea-c7d1ef03dd05" class="bulleted-list"><li style="list-style-type:disc"><strong>购票</strong>：建议提前在线购票以享受优惠。</li></ul><ul id="1946773b-a7ed-80ff-bbf8-e7444388b9d7" class="bulleted-list"><li style="list-style-type:disc"><strong>现金</strong>：建议随身携带现金应急。</li></ul><h3 id="1946773b-a7ed-808a-8e35-ed8d8f64f8a5" class="">三亚四大海湾详细攻略</h3><h3 id="1946773b-a7ed-8048-834f-f051628bdc0a" class="">1. 三亚湾</h3><ul id="1946773b-a7ed-800d-b257-e27e9ac8e56f" class="bulleted-list"><li style="list-style-type:disc"><strong>地理位置</strong>：紧邻三亚市区，距离凤凰机场仅10公里。</li></ul><ul id="1946773b-a7ed-8032-b16d-e835eae0849b" class="bulleted-list"><li style="list-style-type:disc"><strong>特色与优势</strong>：观赏日落的绝佳地点，晚上氛围热闹。</li></ul><ul id="1946773b-a7ed-80b4-907e-d6d4a3d9ac03" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿选择</strong>：经济型酒店为主，星级酒店约500元/晚，特色客栈约200元/晚。</li></ul><ul id="1946773b-a7ed-808b-b992-fdbfc47a04a8" class="bulleted-list"><li style="list-style-type:disc"><strong>附近景点</strong>：椰梦长廊、鹿回头公园、临春岭公园、凤凰岭。</li></ul><h3 id="1946773b-a7ed-801d-bc30-e3b3ec1654b6" class="">2. 大东海</h3><ul id="1946773b-a7ed-8089-bbf3-d139391efb47" class="bulleted-list"><li style="list-style-type:disc"><strong>区位特点</strong>：三亚最早开发的度假区，离市区最近的海湾。</li></ul><ul id="1946773b-a7ed-80a0-9baa-ccda89770d44" class="bulleted-list"><li style="list-style-type:disc"><strong>娱乐设施</strong>：水上项目丰富多样，晚上有热闹的酒吧长廊。</li></ul><ul id="1946773b-a7ed-8056-90d3-e01cf55acbad" class="bulleted-list"><li style="list-style-type:disc"><strong>住宿价位</strong>：经济型酒店为主，豪华酒店价格区间600-2000元不等。</li></ul><h3 id="1946773b-a7ed-80fb-a15f-cedd9f087f35" class="">3. 亚龙湾</h3><ul id="1946773b-a7ed-806f-928b-d0a60de79d9a" class="bulleted-list"><li style="list-style-type:disc"><strong>自然环境</strong>：7000米银白色海滩，沙质最细腻、海水最清澈。</li></ul><ul id="1946773b-a7ed-804a-8cee-f0227d56c3d1" class="bulleted-list"><li style="list-style-type:disc"><strong>酒店特色</strong>：国际知名酒店云集（万豪、希尔顿、喜来登等），价格区间800-2000元/晚。</li></ul><h3 id="1946773b-a7ed-803f-aab1-cf355a23d993" class="">4. 海棠湾</h3><ul id="1946773b-a7ed-8017-9a20-f91a1a90054c" class="bulleted-list"><li style="list-style-type:disc"><strong>环境特点</strong>：开发最晚，环境最幽静，人流较少。</li></ul><ul id="1946773b-a7ed-80ff-88ae-d1b922c0e189" class="bulleted-list"><li style="list-style-type:disc"><strong>配套设施</strong>：全球最大单体免税店，蜈支洲岛登岛口，奢华酒店为主，价格1500-3000元/晚。</li></ul><h3 id="1946773b-a7ed-8036-8792-e34a839853c8" class="">三亚旅游实用建议</h3><ul id="1946773b-a7ed-8022-9f0a-c68a35dd6f80" class="bulleted-list"><li style="list-style-type:disc"><strong>游泳安全</strong>：严格遵守安全区域，注意天气变化。</li></ul><ul id="1946773b-a7ed-8059-9d52-c7ddfaa84ca3" class="bulleted-list"><li style="list-style-type:disc"><strong>防晒措施</strong>：全天候防晒，带好防护用品。</li></ul><ul id="1946773b-a7ed-80d6-b10b-c156949bf0ad" class="bulleted-list"><li style="list-style-type:disc"><strong>交通建议</strong>：提前了解公交线路或选择正规出租车。</li></ul><ul id="1946773b-a7ed-8095-9d29-de5a29349300" class="bulleted-list"><li style="list-style-type:disc"><strong>购物提醒</strong>：景区商品较贵，建议到市区购物。</li></ul><ul id="1946773b-a7ed-8037-80ef-e8377e182140" class="bulleted-list"><li style="list-style-type:disc"><strong>行程安排</strong>：避免过于紧凑，预留充足休息时间。</li></ul><h3 id="1946773b-a7ed-80b8-82bf-c276b9f17821" class="">三亚美食大探索</h3><h3 id="1946773b-a7ed-8038-b9c9-c8c59393e223" class="">一、海鲜大排档</h3><ul id="1946773b-a7ed-80e0-bb67-e16547ad3501" class="bulleted-list"><li style="list-style-type:disc"><strong>蟹小妹海鲜大排档</strong><ul id="1946773b-a7ed-80b0-a416-fe54a4059edb" class="bulleted-list"><li style="list-style-type:circle"><strong>特色菜</strong>：香辣蟹、椒盐皮皮虾、酱爆鱿鱼。</li></ul></li></ul><ul id="1946773b-a7ed-809a-b75a-e6274c52af31" class="bulleted-list"><li style="list-style-type:disc"><strong>椰乡小老弟海鲜糟粕醋火锅</strong><ul id="1946773b-a7ed-802f-a321-c205795da9b5" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：文昌鸡与糟粕醋汤底完美融合，海鲜拼盘新鲜。</li></ul></li></ul><h3 id="1946773b-a7ed-805d-a762-c5340234f584" class="">二、糟粕醋火锅</h3><ul id="1946773b-a7ed-80b2-ac82-f5349eb5930f" class="bulleted-list"><li style="list-style-type:disc"><strong>椰乡小老弟</strong><ul id="1946773b-a7ed-8081-8549-c0158c7af558" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：以糟粕醋为底料，酸辣开胃，文昌鸡肉质鲜嫩。</li></ul></li></ul><h3 id="1946773b-a7ed-80a4-9a68-d126f0bd66fc" class="">三、地道海南菜</h3><ul id="1946773b-a7ed-804d-9920-c1441a58a4fd" class="bulleted-list"><li style="list-style-type:disc"><strong>琼阿妹·文昌鸡簸箕宴</strong><ul id="1946773b-a7ed-8025-8cc3-d4ed9e6278f2" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：簸箕内盛放多种海南美食，如文昌鸡、海南粉等。</li></ul></li></ul><ul id="1946773b-a7ed-801a-a279-fb76a2aa673c" class="bulleted-list"><li style="list-style-type:disc"><strong>御赐良鸡海南鸡饭</strong><ul id="1946773b-a7ed-80a9-9b10-cda2ae404728" class="bulleted-list"><li style="list-style-type:circle"><strong>特色</strong>：鸡油饭搭配特制高汤，米饭金黄诱人。</li></ul></li></ul><h3 id="1946773b-a7ed-8077-96e3-d06e03c22463" class="">四、小吃夜市</h3><ul id="1946773b-a7ed-80ed-ad7a-f5e26bd28a06" class="bulleted-list"><li style="list-style-type:disc"><strong>第一市场夜市和林旺夜市</strong><ul id="1946773b-a7ed-8018-bb39-d58282de796c" class="bulleted-list"><li style="list-style-type:circle"><strong>特色小吃</strong>：崖城臭豆腐、藤桥排骨、君瑞陵水酸粉。</li></ul></li></ul><h3 id="1946773b-a7ed-8057-9aff-efb9c79e6600" class="">五、美食街区</h3><ul id="1946773b-a7ed-8023-a102-d5b1efc426f1" class="bulleted-list"><li style="list-style-type:disc"><strong>海棠68环球美食街和天悦城</strong><ul id="1946773b-a7ed-808b-bb80-e056e3ab104f" class="bulleted-list"><li style="list-style-type:circle"><strong>特色餐厅</strong>：红沙大排档、唠婆香草鸭。</li></ul></li></ul><h3 id="1946773b-a7ed-8071-8117-ca3ebf8e0d54" class="">六、伴手礼</h3><ul id="1946773b-a7ed-8019-b0f1-d66a259b3f50" class="bulleted-list"><li style="list-style-type:disc"><strong>第一农贸市场和旺豪超市</strong><ul id="1946773b-a7ed-80c8-b635-cc90ef0bdadb" class="bulleted-list"><li style="list-style-type:circle"><strong>特色产品</strong>：椰子糖、椰子糕、果脯、海产干货等。</li></ul></li></ul><h3 id="1946773b-a7ed-8012-b297-fbc4cab24267" class="">三亚免税店购物攻略</h3><h3 id="1946773b-a7ed-802e-901e-cb8cfeec2e7e" class="">一、三亚国际免税城</h3><ul id="1946773b-a7ed-802a-b0a5-ceef28598326" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市海棠区海棠北路118号</li></ul><ul id="1946773b-a7ed-8027-977d-ce4f85a3719b" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-80a3-a86d-fc81a87436d8" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：香奈儿、兰蔻、迪奥等。</li></ul><ul id="1946773b-a7ed-8001-839e-d1385067d81b" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：线下实体店或通过cdf离岛免税APP线上购买，注册会员享积分返现，提货方式多样。</li></ul><h3 id="1946773b-a7ed-802f-a700-ee64ac4a9bf6" class="">二、三亚凤凰机场免税店</h3><ul id="1946773b-a7ed-807c-9cee-ed7a2493a597" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚凤凰机场T1航站楼西扩（208-206登机口旁）</li></ul><ul id="1946773b-a7ed-80a4-b09c-f60ca1ba0bff" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：05:30-23:00</li></ul><ul id="1946773b-a7ed-803d-8c11-f950ea47d866" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：雅诗兰黛、迪奥、兰蔻等。</li></ul><ul id="1946773b-a7ed-8067-b521-df0fb11d8a7f" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：适合离岛前“查漏补缺”，品类齐全且提货便捷。</li></ul><h3 id="1946773b-a7ed-8023-b90f-febb071d8211" class="">三、三亚海旅免税城</h3><ul id="1946773b-a7ed-8036-85cf-e81e827aa31d" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市吉阳区迎宾路303号</li></ul><ul id="1946773b-a7ed-8013-8a53-f33f2ff13e1f" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-22:00</li></ul><ul id="1946773b-a7ed-8014-809e-fe325b9948c3" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：Tasaki、Marni等170多个品牌。</li></ul><ul id="1946773b-a7ed-8052-9939-fdc2430d5742" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：电子产品折扣多，适合购买苹果等数码产品。</li></ul><h3 id="1946773b-a7ed-80e5-b41c-dcc007596c89" class="">四、三亚国际免税购物公园</h3><ul id="1946773b-a7ed-80d1-8f57-db2b547766f0" class="bulleted-list"><li style="list-style-type:disc"><strong>地址</strong>：三亚市天涯区解放一路16号</li></ul><ul id="1946773b-a7ed-80e7-b388-d66784c854a0" class="bulleted-list"><li style="list-style-type:disc"><strong>营业时间</strong>：10:00-23:00</li></ul><ul id="1946773b-a7ed-8085-868e-d158fee05c3b" class="bulleted-list"><li style="list-style-type:disc"><strong>主营品牌</strong>：三星、索尼等电子产品，以及健康食品和医疗器械。</li></ul><ul id="1946773b-a7ed-8038-879e-caa87a910cc3" class="bulleted-list"><li style="list-style-type:disc"><strong>购物攻略</strong>：大健康生活馆是特色，适合购买保健品和医疗器械。</li></ul><h3 id="1946773b-a7ed-8035-bec7-d0baabe0f9ba" class="">提货方式</h3><ol type="1" id="1946773b-a7ed-802c-a48c-e14919ae655e" class="numbered-list" start="1"><li><strong>自提</strong>：身份证、登机牌，线下买单的货品还需要小票。</li></ol><ol type="1" id="1946773b-a7ed-8036-a459-f97fc4a50ed9" class="numbered-list" start="2"><li><strong>邮寄</strong>：适合不紧急的商品，免税店承担邮寄费用。</li></ol><ol type="1" id="1946773b-a7ed-80d2-b23b-e5a82b38a501" class="numbered-list" start="3"><li><strong>即购即提</strong>：买完直接带走，在机场办理退税。</li></ol><h3 id="1946773b-a7ed-80a7-b279-cd0e8c9f343b" class="">CDF离岛补购商城</h3><ul id="1946773b-a7ed-8018-896e-eea7acb7dfb5" class="bulleted-list"><li style="list-style-type:disc">离岛回来180天内可再次购买，直邮到家，不限购，但不可以用积分。</li></ul><ul id="1946773b-a7ed-8056-8156-d1eb4090c255" class="bulleted-list"><li style="list-style-type:disc">离岛补购网上商城地址：<a href="http://fg.cdfgsanya.com/">CDF离岛补购商城</a></li></ul><ul id="1946773b-a7ed-806f-a3df-e8af2c33c6af" class="bulleted-list"><li style="list-style-type:disc">微信小程序购买免税品认准“cdf海南免税”。</li></ul><h3 id="1946773b-a7ed-8082-b080-d25cee8e6dc9" class="">购物技巧</h3><ol type="1" id="1946773b-a7ed-80d5-adbe-ddc9056949f8" class="numbered-list" start="1"><li><strong>关注官方动态</strong>：免税店官网、官方微博和微信，获取最新促销活动信息。</li></ol><ol type="1" id="1946773b-a7ed-8037-b56e-ff53830a41ec" class="numbered-list" start="2"><li><strong>把握购物时间</strong>：建议10点开门前准时到达，或在饭点和下午5点团客撤离后前往。</li></ol><ol type="1" id="1946773b-a7ed-8087-80e4-e66b729b2496" class="numbered-list" start="3"><li><strong>办理会员卡</strong>：凭身份证件免费办理会员卡，享受积分抵现和生日月双倍积分。</li></ol><ol type="1" id="1946773b-a7ed-80d4-8b0f-c9d5884c9c94" class="numbered-list" start="4"><li><strong>选择套装</strong>：套装性价比高，占用额度少，建议多询问营业员是否有套装。</li></ol></details></li></ul><p id="1946773b-a7ed-80de-8378-dcf3ea460f6c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
