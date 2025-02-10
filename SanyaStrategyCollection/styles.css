@@ -10,23 +10,23 @@ body {
 /* 移动端样式（屏幕宽度小于768px） */
 @media (max-width: 768px) {
   body {
-    font-size: calc(32px + 1vw); /* 移动端默认字体大小，是桌面端的两倍 */
+    font-size: 4vw; /* 移动端默认字体大小，是桌面端的两倍 */
   }
 
   h1 {
-    font-size: calc(64px + 2vw); /* 移动端标题1，是桌面端的两倍 */
+    font-size: 8vw; /* 移动端标题1，是桌面端的两倍 */
   }
 
   h2 {
-    font-size: calc(48px + 1.5vw); /* 移动端标题2，是桌面端的两倍 */
+    font-size: 12vw; /* 移动端标题2，是桌面端的两倍 */
   }
 
   h3 {
-    font-size: calc(40px + 1vw); /* 移动端标题3，是桌面端的两倍 */
+    font-size: 4vw; /* 移动端标题3，是桌面端的两倍 */
   }
 
   p {
-    font-size: calc(32px + 0.5vw); /* 移动端段落，是桌面端的两倍 */
+    font-size: 2vw; /* 移动端段落，是桌面端的两倍 */
   }
 }
 
