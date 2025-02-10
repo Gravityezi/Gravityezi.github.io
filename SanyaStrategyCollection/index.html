@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转页面</title>
+    <style>
+        /* 添加一些样式让链接看起来更友好 */
+        .auto-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .auto-link .icon {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <a href="%E4%B8%89%E4%BA%9A%E6%94%9C%E7%95%A5%E6%90%9C%E9%9B%86%5BHomePage%5D%201946773ba7ed80ebaef1ca521cc8cdf0.html" class="auto-link" id="auto-link">
+        <span class="icon">🏝️</span>三亚攻略搜集[HomePage]
+    </a>
+
+    <script>
+        // 页面加载完成后自动跳转
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取链接的href属性值
+            const targetUrl = document.getElementById("auto-link").href;
+            // 使用window.location.href实现跳转
+            window.location.href = targetUrl;
+        });
+    </script>
+</body>
+</html>
