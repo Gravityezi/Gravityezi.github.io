@@ -1,1 +1,1 @@
-# [Gravityezi.github.io](https://gravityezi.github.io/SanyaStrategyCollection/)
+# [三亚攻略收集](https://gravityezi.github.io/SanyaStrategyCollection/)
