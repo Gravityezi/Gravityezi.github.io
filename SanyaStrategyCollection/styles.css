@@ -10,29 +10,29 @@ body {
 /* 当屏幕宽度小于600px时，调整字体大小 */
 @media (max-width: 600px) {
     body {
-        font-size: 20px; /* 增大字体 */
-        line-height: 1.8; /* 增大行高 */
-        padding: 15px; /* 增加内边距 */
+        font-size: 40px; /* 增大字体 */
+        line-height: 2.4; /* 增大行高 */
+        padding: 30px; /* 增加内边距 */
     }
 
     h1 {
-        font-size: 2.5rem; /* 调整标题字体大小 */
+        font-size: 4rem; /* 调整标题字体大小 */
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     h3 {
-        font-size: 1.75rem;
+        font-size: 3rem;
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: 2.5rem;
     }
 
     a {
-        font-size: 1.25rem;
+        font-size: 2.5rem;
     }
 }
 
