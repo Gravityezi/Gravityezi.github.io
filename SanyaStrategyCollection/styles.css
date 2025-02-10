@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* 默认字体大小 */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* 当屏幕宽度小于600px时，调整字体大小 */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px; /* 增大字体 */
+        line-height: 1.8; /* 增大行高 */
+        padding: 15px; /* 增加内边距 */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* 调整标题字体大小 */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    a {
+        font-size: 1.25rem;
+    }
+}
+
+/* 添加一些样式让链接看起来更友好 */
+.auto-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.auto-link .icon {
+    font-size: 1.2em;
+}
