@@ -7,34 +7,51 @@ body {
     white-space: pre-wrap;
 }
 
-/* 当屏幕宽度小于600px时，调整字体大小 */
-@media (max-width: 600px) {
-    body {
-        font-size: 40px; /* 增大字体 */
-        line-height: 2.4; /* 增大行高 */
-        padding: 30px; /* 增加内边距 */
+/* 移动端样式（屏幕宽度小于768px） */
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px; /* 移动端默认字体大小，比桌面端大 */
+      }
+
+      h1 {
+        font-size: 2.25rem; /* 40.5px */
+      }
+
+      h2 {
+        font-size: 1.75rem; /* 31.5px */
+      }
+
+      h3 {
+        font-size: 1.5rem; /* 27px */
+      }
+
+      p {
+        font-size: 1.125rem; /* 20.25px */
+      }
     }
 
-    h1 {
-        font-size: 4rem; /* 调整标题字体大小 */
-    }
+    /* 平板设备样式（屏幕宽度在768px到1024px之间） */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      body {
+        font-size: 17px; /* 平板设备默认字体大小，介于桌面端和移动端之间 */
+      }
 
-    h2 {
-        font-size: 3.5rem;
-    }
+      h1 {
+        font-size: 2.125rem; /* 36.125px */
+      }
 
-    h3 {
-        font-size: 3rem;
-    }
+      h2 {
+        font-size: 1.625rem; /* 27.625px */
+      }
 
-    p {
-        font-size: 2.5rem;
-    }
+      h3 {
+        font-size: 1.375rem; /* 23.375px */
+      }
 
-    a {
-        font-size: 2.5rem;
+      p {
+        font-size: 1rem; /* 17px */
+      }
     }
-}
 
 /* 添加一些样式让链接看起来更友好 */
 .auto-link {
