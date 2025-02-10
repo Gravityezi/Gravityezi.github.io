@@ -1,6 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>各景点地图</title>
-<link rel="stylesheet" href="styles.css"> <!-- 引用CSS文件 -->
-<style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>各景点地图</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -22,6 +20,29 @@ body {
 		max-width: 900px;
 		color: rgb(55, 53, 47);
 	}
+}
+
+/* 移动端样式（屏幕宽度小于768px） */
+@media (max-width: 768px) {
+  body {
+    font-size: 4vw; /* 移动端默认字体大小，是桌面端的两倍 */
+  }
+
+  h1 {
+    font-size: 8vw; /* 移动端标题1，是桌面端的两倍 */
+  }
+
+  h2 {
+    font-size: 12vw; /* 移动端标题2，是桌面端的两倍 */
+  }
+
+  h3 {
+    font-size: 4vw; /* 移动端标题3，是桌面端的两倍 */
+  }
+
+  p {
+    font-size: 2vw; /* 移动端段落，是桌面端的两倍 */
+  }
 }
 
 body {
